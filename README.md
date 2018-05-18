@@ -1,7 +1,7 @@
 # WindowGlow
 First personal Angular evaluation project
 
-## Purpose
+## Motivation
 Learning Angular (using version 5)
 
 ## Goal
