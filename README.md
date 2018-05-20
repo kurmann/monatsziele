@@ -1,8 +1,8 @@
-# Besteigungsgeschichte
+# Expeditionsjournal
 First personal Angular evaluation project
 
 ## Subject
-Listing mountains I climbed to make a Besteigungsgeschichte.
+A journal listing personal expeditions.
 
 ## Motivation
 Learning Angular (using version 5)
