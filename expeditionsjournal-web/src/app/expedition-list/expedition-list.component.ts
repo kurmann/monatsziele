@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Expedition } from '../expedition';
+import { EXPEDITIONLIST } from '../mock-expedition-list';
 
 @Component({
   selector: 'app-expedition-list',
@@ -8,12 +9,7 @@ import { Expedition } from '../expedition';
 })
 export class ExpeditionListComponent implements OnInit {
 
-  expedition: Expedition = {
-    id: 1,
-    name: 'Moléson',
-    altitude_meters_above_sealevel: 2002
-  };
-
+  expeditions = EXPEDITIONLIST;
   constructor() { }
 
   ngOnInit() {
