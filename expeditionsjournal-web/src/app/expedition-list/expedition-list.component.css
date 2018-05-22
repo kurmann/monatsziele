@@ -1,5 +1,12 @@
 h2 {
     text-shadow: 1px 1px gray;
+    color: #111;
+    margin-top: 1em;
+}
+
+label {
+    color: silver;
+    min-width: 12em;
 }
 
 .expedition {
@@ -12,4 +19,8 @@ h2 {
 
 .expedition:hover {
     background-color: silver;
+}
+
+.form-inline {
+    padding-top: 1em;
 }
