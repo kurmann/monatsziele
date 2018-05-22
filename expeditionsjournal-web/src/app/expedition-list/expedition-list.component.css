@@ -5,3 +5,7 @@
 .expedition .name {
     font-style: italic;
 }
+
+.expedition:hover {
+    background-color: silver;
+}

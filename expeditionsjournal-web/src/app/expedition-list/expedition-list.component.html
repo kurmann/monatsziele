@@ -1,12 +1,14 @@
 <h2>List of all expeditions</h2>
-<ul class="expedition-list">
-  <li class="expedition" *ngFor="let expedition of expeditions" (click)="onSelect(expedition)">
+<ul class="list-group">
+  <li class="list-group-item expedition" *ngFor="let expedition of expeditions" (click)="onSelect(expedition)">
     <span class="name">{{expedition.name | uppercase}}</span>&nbsp;
     <span class="altitude">{{expedition.altitude_meters}}m</span></li>
 </ul>
 
-<div *ngIf="selectedExpedition">
-    <label>Name:
-      <input [(ngModel)]="selectedExpedition.name">
+<div class="form-inline">
+<div class="form-group mb-2" *ngIf="selectedExpedition">
+    <label>Name
+        <input type="text" class="form-control" [(ngModel)]="selectedExpedition.name">
     </label>
+</div>
 </div>
