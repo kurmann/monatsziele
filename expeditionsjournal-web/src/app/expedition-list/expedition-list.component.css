@@ -1,0 +1,7 @@
+.expedition-list {
+    list-style: none;
+}
+
+.expedition .name {
+    font-style: italic;
+}
