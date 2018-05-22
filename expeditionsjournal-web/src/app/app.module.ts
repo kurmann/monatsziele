@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ExpeditionListComponent } from './expedition-list/expedition-list.component';
@@ -10,7 +11,8 @@ import { ExpeditionListComponent } from './expedition-list/expedition-list.compo
     ExpeditionListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

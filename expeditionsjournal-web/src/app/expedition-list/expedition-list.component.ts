@@ -10,6 +10,12 @@ import { EXPEDITIONLIST } from '../mock-expedition-list';
 export class ExpeditionListComponent implements OnInit {
 
   expeditions = EXPEDITIONLIST;
+  selectedExpedition: Expedition;
+
+  onSelect(expedition: Expedition): void {
+    this.selectedExpedition = expedition;
+  }
+
   constructor() { }
 
   ngOnInit() {
