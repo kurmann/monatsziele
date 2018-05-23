@@ -1,5 +1,9 @@
 h2 {
     text-shadow: 1px 1px gray;
-    color: rgba(255, 255, 255, 0.65);
     margin-top: 1em;
+    text-align: center;
+}
+
+:host {
+    color: rgba(255, 255, 255, 0.65);
 }
