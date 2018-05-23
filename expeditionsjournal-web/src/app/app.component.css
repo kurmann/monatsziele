@@ -1,4 +1,6 @@
-h1 {
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 2px 2px gray;
+:host {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: lightgray;
+    background-image: url(/assets/ludwigshoehe-1080.jpg);
+    padding-top: 2em;
 }

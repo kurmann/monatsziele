@@ -24,3 +24,7 @@ label {
 .form-inline {
     padding-top: 1em;
 }
+
+:host {
+    text-align: center;
+}
