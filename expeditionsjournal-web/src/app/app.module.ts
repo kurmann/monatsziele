@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ExpeditionListComponent } from './expedition-list/expedition-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExpeditionListComponent
-  ],
+    ExpeditionListComponent,
+    HeaderComponent
+],
   imports: [
     BrowserModule,
     FormsModule
