@@ -1,6 +1,7 @@
 <h2>List of all expeditions</h2>
 <ul class="list-group expedition-list">
-    <li class="list-group-item expedition" *ngFor="let expedition of expeditions" (click)="onSelect(expedition)">
+    <li class="list-group-item expedition" *ngFor="let expedition of expeditions" [class.selected]="expedition === selectedExpedition"
+        (click)="onSelect(expedition)">
         <span class="name">{{expedition.name | uppercase}}</span>&nbsp;
         <span class="altitude">{{expedition.altitude_meters}}m</span>
     </li>
