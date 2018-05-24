@@ -1,11 +1,13 @@
 <div class="container" *ngIf="selectedExpedition">
-    <h2>Detail of Expedition</h2>
     <div id="expedition-detail" class="card">
         <div class="card-body">
-            <div *ngIf="selectedExpedition.id">ID: {{selectedExpedition.id}}</div>
-            <div *ngIf="selectedExpedition.name">Name: {{selectedExpedition.name}}</div>
-            <div *ngIf="selectedExpedition.altitude_meters">Höhe: {{selectedExpedition.altitude_meters}}</div>
-            <div *ngIf="selectedExpedition.comment">Kommentar: {{selectedExpedition.comment}}</div>
+            <h5 id="expedition-detail-title" class="card-title">Detail of Expedition</h5>
+            <div class="card-text">
+                <div *ngIf="selectedExpedition.id">ID: {{selectedExpedition.id}}</div>
+                <div *ngIf="selectedExpedition.name">Name: {{selectedExpedition.name}}</div>
+                <div *ngIf="selectedExpedition.altitude_meters">Höhe: {{selectedExpedition.altitude_meters}}</div>
+                <div *ngIf="selectedExpedition.comment">Kommentar: {{selectedExpedition.comment}}</div>
+            </div>
         </div>
     </div>
 </div>
