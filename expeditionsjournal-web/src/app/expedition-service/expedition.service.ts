@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Expedition } from '../expedition';
 import { EXPEDITIONLIST } from '../mock-expedition-list';
 
@@ -6,6 +6,8 @@ import { EXPEDITIONLIST } from '../mock-expedition-list';
   providedIn: 'root'
 })
 export class ExpeditionService {
+
+  @Output() change: EventEmitter<boolean> = new EventEmitter();
 
   _selectedExpedition: Expedition;
 
