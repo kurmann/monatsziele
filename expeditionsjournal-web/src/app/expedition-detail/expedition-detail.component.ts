@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpeditionService } from '../expedition-service/expedition.service';
+import { Expedition } from '../expedition';
 
 @Component({
   selector: 'app-expedition-detail',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpeditionDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private expeditionService: ExpeditionService) { }
+  selectedExpedition: Expedition;
 
   ngOnInit() {
+    this.expeditionService.change.subscribe(changedSelectedExpedition => {
+      this.selectedExpedition = changedSelectedExpedition;
+    });
   }
 
 }

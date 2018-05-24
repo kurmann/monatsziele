@@ -7,20 +7,22 @@ import { EXPEDITIONLIST } from '../mock-expedition-list';
 })
 export class ExpeditionService {
 
-  @Output() change: EventEmitter<boolean> = new EventEmitter();
+  @Output() change: EventEmitter<Expedition> = new EventEmitter();
 
-  _selectedExpedition: Expedition;
+  selectedExpedition: Expedition;
 
   getExpeditions(): Expedition[] {
     return EXPEDITIONLIST;
   }
 
   setSelectedExpedition(expedition: Expedition): void {
-    this._selectedExpedition = expedition;
+    console.log('Set selected item: ', expedition.name);
+    this.selectedExpedition = expedition;
+    this.change.emit(this.selectedExpedition);
   }
 
   getSelectedExpedition(): Expedition {
-    return this._selectedExpedition;
+    return this.selectedExpedition;
   }
 
   constructor() { }

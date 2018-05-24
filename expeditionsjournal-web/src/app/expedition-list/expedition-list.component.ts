@@ -13,14 +13,14 @@ export class ExpeditionListComponent implements OnInit {
   selectedExpedition: Expedition;
 
   onSelect(expedition: Expedition): void {
-    this.selectedExpedition = expedition;
+    this.expeditionService.setSelectedExpedition(expedition);
   }
 
-  constructor(private _expeditionService: ExpeditionService) {
+  constructor(private expeditionService: ExpeditionService) {
    }
 
   ngOnInit() {
-    this.expeditions = this._expeditionService.getExpeditions();
+    this.expeditions = this.expeditionService.getExpeditions();
   }
 
 }
