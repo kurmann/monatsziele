@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Expedition } from '../expedition';
-import { EXPEDITIONLIST } from '../mock-expedition-list';
+import { ExpeditionService } from '../expedition-service/expedition.service';
 
 @Component({
   selector: 'app-expedition-list',
@@ -9,16 +9,20 @@ import { EXPEDITIONLIST } from '../mock-expedition-list';
 })
 export class ExpeditionListComponent implements OnInit {
 
-  expeditions = EXPEDITIONLIST;
+  private _expeditionService: ExpeditionService;
+  expeditions: Expedition[];
   selectedExpedition: Expedition;
 
   onSelect(expedition: Expedition): void {
     this.selectedExpedition = expedition;
   }
 
-  constructor() { }
+  constructor(expeditionService: ExpeditionService) {
+    this._expeditionService = expeditionService;
+   }
 
   ngOnInit() {
+    this.expeditions = this._expeditionService.getExpeditions();
   }
 
 }

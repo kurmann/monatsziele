@@ -11,5 +11,5 @@ export class ExpeditionService {
     return EXPEDITIONLIST;
   }
 
-  constructor(private expeditionService: ExpeditionService) { }
+  constructor() { }
 }
