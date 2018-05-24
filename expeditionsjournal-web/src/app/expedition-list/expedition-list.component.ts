@@ -9,7 +9,6 @@ import { ExpeditionService } from '../expedition-service/expedition.service';
 })
 export class ExpeditionListComponent implements OnInit {
 
-  private _expeditionService: ExpeditionService;
   expeditions: Expedition[];
   selectedExpedition: Expedition;
 
@@ -17,8 +16,7 @@ export class ExpeditionListComponent implements OnInit {
     this.selectedExpedition = expedition;
   }
 
-  constructor(expeditionService: ExpeditionService) {
-    this._expeditionService = expeditionService;
+  constructor(private _expeditionService: ExpeditionService) {
    }
 
   ngOnInit() {
