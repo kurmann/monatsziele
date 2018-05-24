@@ -21,6 +21,9 @@ export class ExpeditionListComponent implements OnInit {
 
   ngOnInit() {
     this.expeditions = this.expeditionService.getExpeditions();
+    this.expeditionService.change.subscribe(changedSelectedExpedition => {
+      this.selectedExpedition = changedSelectedExpedition;
+    });
   }
 
 }
