@@ -7,8 +7,18 @@ import { EXPEDITIONLIST } from '../mock-expedition-list';
 })
 export class ExpeditionService {
 
+  _selectedExpedition: Expedition;
+
   getExpeditions(): Expedition[] {
     return EXPEDITIONLIST;
+  }
+
+  setSelectedExpedition(expedition: Expedition): void {
+    this._selectedExpedition = expedition;
+  }
+
+  getSelectedExpedition(): Expedition {
+    return this._selectedExpedition;
   }
 
   constructor() { }
