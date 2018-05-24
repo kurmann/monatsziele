@@ -16,7 +16,6 @@ export class ExpeditionService {
   }
 
   setSelectedExpedition(expedition: Expedition): void {
-    console.log('Set selected item: ', expedition.name);
     this.selectedExpedition = expedition;
     this.change.emit(this.selectedExpedition);
   }
