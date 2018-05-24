@@ -1,9 +1,10 @@
 h2 {
+    color: rgba(255, 255, 255, 0.65);
     text-shadow: 1px 1px gray;
     margin-top: 1em;
     text-align: center;
 }
 
-:host {
-    color: rgba(255, 255, 255, 0.65);
+#expedition-detail {
+    background-color: rgba(255, 255, 255, 0.9);
 }
