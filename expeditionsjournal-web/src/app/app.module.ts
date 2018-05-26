@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ExpeditionListComponent } from './expedition-list/expedition-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ExpeditionDetailComponent } from './expedition-detail/expedition-detail.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpeditionListComponent,
     HeaderComponent,
-    ExpeditionDetailComponent
+    ExpeditionDetailComponent,
+    AboutComponent
 ],
   imports: [
     BrowserModule,
