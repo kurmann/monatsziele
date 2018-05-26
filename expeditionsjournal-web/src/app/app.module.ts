@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ExpeditionListComponent } from './expedition-list/expedition-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,7 +18,14 @@ import { AboutComponent } from './about/about.component';
 ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'about', component: AboutComponent },
+      { path: 'expedition-list', component: ExpeditionListComponent},
+      { path: 'home', redirectTo: 'expedition-list', pathMatch: 'full'},
+      { path: '', redirectTo: 'expedition-list', pathMatch: 'full'},
+      { path: '**', redirectTo: 'expedition-list', pathMatch: 'full'},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
