@@ -1,5 +1,5 @@
+import { ExpeditionService } from './../expedition-service/expedition.service';
 import { Component, OnInit } from '@angular/core';
-import { ExpeditionService } from '../expedition-service/expedition.service';
 import { Expedition } from '../expedition';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,10 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExpeditionDetailComponent implements OnInit {
 
-  constructor(private _route: ActivatedRoute) {
+  constructor(private _route: ActivatedRoute, private expeditionService: ExpeditionService) {
    }
 
    selectedExpedition: Expedition;
 
-  ngOnInit() {  }
+  ngOnInit() {
+    const id = +this._route.snapshot.paramMap.get('id');
+    this.selectedExpedition = this.expeditionService.getExpedition(id);
+   }
 }

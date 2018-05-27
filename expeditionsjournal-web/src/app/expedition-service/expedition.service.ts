@@ -15,6 +15,10 @@ export class ExpeditionService {
     return EXPEDITIONLIST;
   }
 
+  getExpedition(id: number): Expedition {
+    return this.getExpeditions().find(e => e.id === id);
+  }
+
   setSelectedExpedition(expedition: Expedition): void {
     this.selectedExpedition = expedition;
     this.change.emit(this.selectedExpedition);
