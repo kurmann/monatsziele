@@ -23,4 +23,8 @@ export class ExpeditionDetailComponent implements OnInit {
    onBack() {
      this.router.navigate(['/expediton-list']);
    }
+
+   edit() {
+    this.router.navigate(['/expedition-list', this.selectedExpedition.id, 'edit'], {relativeTo: this.route});
+   }
 }

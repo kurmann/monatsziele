@@ -7,6 +7,7 @@ import { ExpeditionListComponent } from './expedition-list/expedition-list.compo
 import { HeaderComponent } from './header/header.component';
 import { ExpeditionDetailComponent } from './expedition-detail/expedition-detail.component';
 import { AboutComponent } from './about/about.component';
+import { ExpeditionEditComponent } from './expedition-edit/expedition-edit.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AboutComponent } from './about/about.component';
     ExpeditionListComponent,
     HeaderComponent,
     ExpeditionDetailComponent,
-    AboutComponent
+    AboutComponent,
+    ExpeditionEditComponent
 ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { AboutComponent } from './about/about.component';
       { path: 'about', component: AboutComponent },
       { path: 'expedition-list', component: ExpeditionListComponent },
       { path: 'expedition-list/:id', component: ExpeditionDetailComponent },
+      { path: 'expedition-list/:id/edit', component: ExpeditionEditComponent },
       { path: 'home', redirectTo: 'expedition-list', pathMatch: 'full' },
       { path: '', redirectTo: 'expedition-list', pathMatch: 'full' },
       { path: '**', redirectTo: 'expedition-list', pathMatch: 'full' },
