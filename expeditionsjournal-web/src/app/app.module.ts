@@ -21,10 +21,11 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'about', component: AboutComponent },
-      { path: 'expedition-list', component: ExpeditionListComponent},
-      { path: 'home', redirectTo: 'expedition-list', pathMatch: 'full'},
-      { path: '', redirectTo: 'expedition-list', pathMatch: 'full'},
-      { path: '**', redirectTo: 'expedition-list', pathMatch: 'full'},
+      { path: 'expedition-list', component: ExpeditionListComponent },
+      { path: 'expedition-list/:id', component: ExpeditionDetailComponent },
+      { path: 'home', redirectTo: 'expedition-list', pathMatch: 'full' },
+      { path: '', redirectTo: 'expedition-list', pathMatch: 'full' },
+      { path: '**', redirectTo: 'expedition-list', pathMatch: 'full' },
     ])
   ],
   providers: [],

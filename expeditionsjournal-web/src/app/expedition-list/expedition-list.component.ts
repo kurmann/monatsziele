@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Expedition } from '../expedition';
 import { ExpeditionService } from '../expedition-service/expedition.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-expedition-list',
