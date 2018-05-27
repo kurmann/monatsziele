@@ -12,10 +12,5 @@ export class ExpeditionDetailComponent implements OnInit {
   constructor(private expeditionService: ExpeditionService) { }
   selectedExpedition: Expedition;
 
-  ngOnInit() {
-    this.expeditionService.change.subscribe(changedSelectedExpedition => {
-      this.selectedExpedition = changedSelectedExpedition;
-    });
-  }
-
+  ngOnInit() {  }
 }
