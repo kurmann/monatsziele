@@ -24,13 +24,14 @@ import { GoalListComponent } from './goal-list/goal-list.component';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: 'goal-list', component: GoalListComponent },
       { path: 'about', component: AboutComponent },
       { path: 'expedition-list', component: ExpeditionListComponent },
       { path: 'expedition-list/:id', component: ExpeditionDetailComponent },
       { path: 'expedition-list/:id/edit', component: ExpeditionEditComponent },
-      { path: 'home', redirectTo: 'expedition-list', pathMatch: 'full' },
-      { path: '', redirectTo: 'expedition-list', pathMatch: 'full' },
-      { path: '**', redirectTo: 'expedition-list', pathMatch: 'full' },
+      { path: 'home', redirectTo: 'goal-list', pathMatch: 'full' },
+      { path: '', redirectTo: 'goal-list', pathMatch: 'full' },
+      { path: '**', redirectTo: 'goal-list', pathMatch: 'full' },
     ])
   ],
   providers: [],
