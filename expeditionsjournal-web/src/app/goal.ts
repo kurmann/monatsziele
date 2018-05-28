@@ -7,4 +7,5 @@ export class Goal {
     name: string;
     description?: string;
     period: Period;
+    currentPercentage?: number;
 }
