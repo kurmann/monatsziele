@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ExpeditionDetailComponent } from './expedition-detail/expedition-detail.component';
 import { AboutComponent } from './about/about.component';
 import { ExpeditionEditComponent } from './expedition-edit/expedition-edit.component';
+import { GoalListComponent } from './goal-list/goal-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ExpeditionEditComponent } from './expedition-edit/expedition-edit.compo
     HeaderComponent,
     ExpeditionDetailComponent,
     AboutComponent,
-    ExpeditionEditComponent
+    ExpeditionEditComponent,
+    GoalListComponent
 ],
   imports: [
     BrowserModule,
