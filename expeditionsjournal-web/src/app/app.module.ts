@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ExpeditionEditComponent } from './expedition-edit/expedition-edit.component';
 import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalDetailComponent } from './goal-detail/goal-detail.component';
+import { GoalEditComponent } from './goal-edit/goal-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,18 +21,29 @@ import { GoalDetailComponent } from './goal-detail/goal-detail.component';
     AboutComponent,
     ExpeditionEditComponent,
     GoalListComponent,
-    GoalDetailComponent
-],
+    GoalDetailComponent,
+    GoalEditComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       { path: 'goals', component: GoalListComponent },
-      { path: 'goals/:id', component: GoalDetailComponent },
+      {
+        path: 'goals/:id',
+        component: GoalDetailComponent,
+        children: [
+          {
+            path: 'edit',
+            component: GoalEditComponent
+          }
+        ]
+      },
+      // { path: 'goals/:id/edit', component: GoalEditComponent, },
       { path: 'about', component: AboutComponent },
-      { path: 'expedition-list', component: ExpeditionListComponent },
-      { path: 'expedition-list/:id', component: ExpeditionDetailComponent },
-      { path: 'expedition-list/:id/edit', component: ExpeditionEditComponent },
+      // { path: 'expedition-list', component: ExpeditionListComponent },
+      // { path: 'expedition-list/:id', component: ExpeditionDetailComponent },
+      // { path: 'expedition-list/:id/edit', component: ExpeditionEditComponent },
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },
       { path: '**', redirectTo: 'goals', pathMatch: 'full' },
