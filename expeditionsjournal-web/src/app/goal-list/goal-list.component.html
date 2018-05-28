@@ -1,16 +1,18 @@
 <div class="container">
   <div class="d-flex">
     <div class="card mb-4 mr-4" style="width: 22rem;" *ngFor="let goal of goals">
-      <div class="card-header">{{goal.period}}</div>
-      <div class="card-body">
-        <h5 class="card-title">{{goal.name}}</h5>
-        <p class="card-text">{{goal.description}}</p>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      <a [routerLink]="['/goals', goal.id]" class="card-link">
+        <div class="card-header">{{goal.period}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{goal.name}}</h5>
+          <p class="card-text">{{goal.description}}</p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="card-footer">
-        <button type="button" class="btn btn-outline-primary float-right" ng-click="onEditButtonClick()">Edit</button>
+        <button type="button" class="btn btn-outline-primary float-right">Edit</button>
       </div>
     </div>
   </div>

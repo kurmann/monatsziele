@@ -1,0 +1,11 @@
+.card-link {
+    color: #222;
+}
+
+.card {
+    background-color: #eee;
+}
+
+.card-link:hover {
+    background-color: white;
+}
