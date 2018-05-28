@@ -9,18 +9,26 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./goal-list.component.css']
 })
 export class GoalListComponent implements OnInit {
-
   public goals: Goal[];
 
-  constructor(private goalService: GoalService, private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) { }
+  constructor(
+    private goalService: GoalService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit() {
     this.goals = this.goalService.getGoals();
   }
 
   getWidthStylePercentageValue(percentageNumber: number): SafeStyle {
-    const unsafeStyleValue = 'width: ' + percentageNumber * 100 + '%';
-    return this.sanitizer.bypassSecurityTrustStyle(unsafeStyleValue);
+    let unsafeStyleValue = 'width: 0%';
+    if (percentageNumber === undefined || percentageNumber === NaN) {
+      return this.sanitizer.bypassSecurityTrustStyle(unsafeStyleValue);
+    } else {
+      unsafeStyleValue = 'width: ' + percentageNumber * 100 + '%';
+      return this.sanitizer.bypassSecurityTrustStyle(unsafeStyleValue);
+    }
   }
-
 }
