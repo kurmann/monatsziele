@@ -1,21 +1,23 @@
 <div class="container">
   <div class="card">
-    <div class="card-header">{{goal.period}}</div>
-    <div class="card-body">
-      <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>
-      <div class="card-text">
-        <dl class="row">
-          <dt *ngIf="goal.description" class="col-sm-3">Beschreibung:</dt>
-          <dd *ngIf="goal.description" class="col-sm-9">{{goal.description}}</dd>
-          <dt *ngIf="goal.currentAmount" class="col-sm-3">Aktueller Wert:</dt>
-          <dd *ngIf="goal.currentAmount" class="col-sm-9">{{goal.currentAmount}}</dd>
-          <dt *ngIf="goal.targetAmount" class="col-sm-3">Zielwert:</dt>
-          <dd *ngIf="goal.targetAmount" class="col-sm-9">{{goal.targetAmount}}</dd>
-        </dl>
+    <a [routerLink]="['/goals']" class="card-link">
+      <div class="card-header">{{goal.period}}</div>
+      <div class="card-body">
+        <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>
+        <div class="card-text">
+          <dl class="row">
+            <dt *ngIf="goal.description" class="col-sm-3">Beschreibung:</dt>
+            <dd *ngIf="goal.description" class="col-sm-9">{{goal.description}}</dd>
+            <dt *ngIf="goal.currentAmount" class="col-sm-3">Aktueller Wert:</dt>
+            <dd *ngIf="goal.currentAmount" class="col-sm-9">{{goal.currentAmount}}</dd>
+            <dt *ngIf="goal.targetAmount" class="col-sm-3">Zielwert:</dt>
+            <dd *ngIf="goal.targetAmount" class="col-sm-9">{{goal.targetAmount}}</dd>
+          </dl>
+        </div>
       </div>
-    </div>
-    <div class="card-footer">
-      <button type="button" class="btn btn-outline-primary" (click)="onBack()">Back</button>
-    </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="onBack()">Back</button>
+      </div>
+    </a>
   </div>
 </div>
