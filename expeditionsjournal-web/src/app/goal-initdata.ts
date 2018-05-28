@@ -7,7 +7,7 @@ export const GOALSINITDATA: Goal[] = [
         name: 'Angular Lektionen lernen',
         targetAmount: 25,
         currentAmount: 22,
-        currentPercentage: 88,
+        currentPercentage: 0.88,
         period: Period.Month
     },
     {
@@ -16,7 +16,7 @@ export const GOALSINITDATA: Goal[] = [
         description: 'Trainingssession aller Art (Ausdauer und Krafttraining)',
         currentAmount: 6,
         targetAmount: 10,
-        currentPercentage: 60,
+        currentPercentage: 0.6,
         period: Period.Month
     },
     {
@@ -25,7 +25,7 @@ export const GOALSINITDATA: Goal[] = [
         description: 'Vor Ort im Kurs oder sonstige Gelegenheit. Ein Kurs ist 25 Minuten',
         currentAmount: 12,
         targetAmount: 20,
-        currentPercentage: 60,
+        currentPercentage: 0.6,
         period: Period.Month
     }
 ];
