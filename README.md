@@ -5,7 +5,7 @@ First personal Angular evaluation project
 A journal listing personal expeditions.
 
 ## Motivation
-Learning Angular (using version 5)
+Learning Angular (using version 6)
 
 ## Goal
 Small app inluding use of an REST based Web API.
