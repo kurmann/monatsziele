@@ -2,11 +2,19 @@
   <div class="card">
     <div class="card-header">{{goal.period}}</div>
     <div class="card-body">
-      <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>     
-      <div class="card-text">        
-        <p *ngIf="goal.description"><strong>Beschreibung: </strong>{{goal.description}}</p>
-        <p *ngIf="goal.targetAmount"><strong>Zielwert: </strong>{{goal.targetAmount}}</p>
+      <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>
+      <div class="card-text">
+        <p>
+          <span *ngIf="goal.description">
+            <strong>Beschreibung: </strong>{{goal.description}}</span>
+          <br />
+          <span *ngIf="goal.targetAmount">
+            <strong>Zielwert: </strong>{{goal.targetAmount}}</span>
+        </p>
       </div>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-outline-primary float-right" ng-click="onBack()">Back</button>
     </div>
   </div>
 </div>
