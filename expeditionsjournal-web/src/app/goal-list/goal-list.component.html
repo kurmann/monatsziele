@@ -7,8 +7,8 @@
           <h5 class="card-title">{{goal.name}}</h5>
           <p class="card-text">{{goal.description}}</p>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" [attr.style]='getWidthStylePercentageValue(goal.currentPercentage)' attr.aria-valuenow="{{goal.currentAmount}}" aria-valuemin="0"
-              [attr.aria-valuemax]='goal.targetAmount'>{{goal.currentAmount}} / {{goal.targetAmount}}</div>
+            <div class="progress-bar" role="progressbar" [attr.style]='getWidthStylePercentageValue(goal.currentPercentage)' [attr.aria-valuenow]='goal.currentAmount'
+              aria-valuemin="0" [attr.aria-valuemax]='goal.targetAmount'>{{goal.currentAmount}} / {{goal.targetAmount}}</div>
           </div>
         </div>
       </a>
