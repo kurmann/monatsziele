@@ -1,6 +1,6 @@
 export enum Period {
-    Week,
-    Month,
-    Quarter,
-    Year
+    Week = 'Week',
+    Month = 'Month',
+    Quarter = 'Quarter',
+    Year = 'Year'
 }
