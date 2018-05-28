@@ -4,13 +4,14 @@
     <div class="card-body">
       <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>
       <div class="card-text">
-        <p>
-          <span *ngIf="goal.description">
-            <strong>Beschreibung: </strong>{{goal.description}}</span>
-          <br />
-          <span *ngIf="goal.targetAmount">
-            <strong>Zielwert: </strong>{{goal.targetAmount}}</span>
-        </p>
+        <dl class="row">
+          <dt *ngIf="goal.description" class="col-sm-3">Beschreibung:</dt>
+          <dd *ngIf="goal.description" class="col-sm-9">{{goal.description}}</dd>
+          <dt *ngIf="goal.currentAmount" class="col-sm-3">Aktueller Wert:</dt>
+          <dd *ngIf="goal.currentAmount" class="col-sm-9">{{goal.currentAmount}}</dd>
+          <dt *ngIf="goal.targetAmount" class="col-sm-3">Zielwert:</dt>
+          <dd *ngIf="goal.targetAmount" class="col-sm-9">{{goal.targetAmount}}</dd>
+        </dl>
       </div>
     </div>
     <div class="card-footer">
