@@ -1,9 +1,0 @@
-<div class="container">
-  <h2>List of all expeditions</h2>
-  <div class="list-group expedition-list">
-    <a [routerLink]="['/expedition-list', expedition.id]" class="list-group-item list-group-item-action expedition" *ngFor="let expedition of expeditions">
-      <span class="name">{{expedition.name | uppercase}}</span>&nbsp;
-      <span class="altitude">{{expedition.altitude_meters}}m</span>
-    </a>
-  </div>
-</div>
