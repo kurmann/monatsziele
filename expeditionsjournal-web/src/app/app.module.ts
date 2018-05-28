@@ -23,8 +23,9 @@ import { GoalEditComponent } from './goal-edit/goal-edit.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'goals', component: GoalListComponent },
-      { path: 'goals/:id', component: GoalDetailComponent },
+      { path: 'goals/:id/detail', component: GoalDetailComponent },
       { path: 'goals/:id/edit', component: GoalEditComponent, },
+      { path: 'goals/:id',  redirectTo: 'goals/:id/detail', pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },

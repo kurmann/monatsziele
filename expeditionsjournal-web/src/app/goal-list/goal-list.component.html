@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex">
     <div class="card mb-4 ml-4" style="width: 22rem;" *ngFor="let goal of goals">
-      <a [routerLink]="['/goals', goal.id]" class="card-link">
+      <a [routerLink]="['/goals', goal.id, 'detail']" class="card-link">
         <div class="card-header">{{goal.period}}</div>
         <div class="card-body">
           <h5 class="card-title">{{goal.name}}</h5>
