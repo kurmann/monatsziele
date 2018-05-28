@@ -1,6 +1,6 @@
 export enum Period {
-    Week = 'Week',
-    Month = 'Month',
-    Quarter = 'Quarter',
-    Year = 'Year'
+    Week = 'Weekly Goal',
+    Month = 'Monthly Goal',
+    Quarter = 'Quarter Goal',
+    Year = 'Annual Goal'
 }

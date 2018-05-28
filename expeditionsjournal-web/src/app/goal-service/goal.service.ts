@@ -13,4 +13,8 @@ export class GoalService {
     return GOALSINITDATA;
   }
 
+  getGoal(id: string): Goal {
+    return this.getGoals().find(e => e.id === id);
+  }
+
 }
