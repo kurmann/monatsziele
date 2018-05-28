@@ -31,4 +31,8 @@ export class GoalListComponent implements OnInit {
       return this.sanitizer.bypassSecurityTrustStyle(unsafeStyleValue);
     }
   }
+
+  onDetail(goalId: number) {
+    this.router.navigate(['goals', goalId, 'detail']);
+  }
 }

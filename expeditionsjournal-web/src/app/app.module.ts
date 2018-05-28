@@ -29,7 +29,7 @@ import { GoalUpdateComponent } from './goal-update/goal-update.component';
       { path: 'about', component: AboutComponent },
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },
-      { path: '**', redirectTo: 'goals' },
+      { path: '**', redirectTo: 'goals', pathMatch: 'full' },
     ])
   ],
   providers: [],
