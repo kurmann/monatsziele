@@ -23,7 +23,6 @@ export class GoalDetailComponent implements OnInit {
   }
 
   onUpdate() {
-    console.log(this.goal.id);
     this.router.navigate(['/goals', this.goal.id, 'update'], { relativeTo: this.route });
   }
 }

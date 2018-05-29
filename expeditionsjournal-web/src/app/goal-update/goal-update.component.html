@@ -1,18 +1,16 @@
 <div class="container">
 
   <div class="card">
-    <a [routerLink]="['/goals']" class="card-link">
-      <div class="card-header">{{goal.period}}</div>
-      <div class="card-body">
-        <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>
-        <div class="card-text">
+    <div class="card-header">{{goal.period}}</div>
+    <div class="card-body">
+      <h5 class="card-title" *ngIf="goal.name">Name: {{goal.name}}</h5>
+      <div class="card-text">
 
-        </div>
       </div>
-    </a>
+    </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-outline-primary" (click)="onBack()">Back</button>
-      <button type="button" class="btn btn-primary ml-2 float-right" (click)="onUpdate()">Update Goal</button>
+      <button type="button" class="btn btn-primary ml-2" (click)="onUpdate()">Update Goal</button>
+      <button type="button" class="btn btn-outline-primary float-right" (click)="onUpdateCancel()">Abbrechen</button>
     </div>
 
   </div>
