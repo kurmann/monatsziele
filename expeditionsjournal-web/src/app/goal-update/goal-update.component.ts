@@ -23,6 +23,10 @@ export class GoalUpdateComponent implements OnInit {
     this.goal = this.goalService.getGoal(id);
   }
 
+  onSaveUpdate(){
+    this.router.navigate(['/goals', this.goal.id, 'detail']);
+  }
+
   onCancelUpdate() {
     this.router.navigate(['/goals', this.goal.id, 'detail']);
   }
