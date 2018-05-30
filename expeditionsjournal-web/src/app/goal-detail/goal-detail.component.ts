@@ -22,7 +22,7 @@ export class GoalDetailComponent implements OnInit {
     // test
     this.recording = new Recording ();
     this.recording.date = new Date();
-    this.recording.goalId = 'abacc95c-9515-4470-be53-cf3c15276796';
+    this.recording.goalIds = ['abacc95c-9515-4470-be53-cf3c15276796'];
   }
 
   onBack() {

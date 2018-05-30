@@ -6,9 +6,9 @@ export class Recording {
     id?: string;
 
     /**
-     * The related goal as GUID
+     * The related goals as GUID (in most cases it is one goal)
      */
-    goalId: string;
+    goalIds: string[];
 
     /**
      * The date of the recording (can be different from the item createdDate)
