@@ -16,6 +16,11 @@ export class Recording {
     date: Date;
 
     /**
+     * The amount of the recording
+     */
+    amount: number;
+
+    /**
      * The date this item has been created
      */
     itemCreatedDate?: Date;
