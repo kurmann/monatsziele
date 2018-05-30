@@ -21,6 +21,11 @@ export class Recording {
     amount: number;
 
     /**
+     * Recording comment
+     */
+    comment?: string;
+
+    /**
      * The date this item has been created
      */
     itemCreatedDate?: Date;

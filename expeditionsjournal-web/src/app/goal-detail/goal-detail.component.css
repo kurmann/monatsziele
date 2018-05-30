@@ -7,3 +7,12 @@ h2 {
 .card-link {
     color: #222;
 }
+
+.card.recording {
+    width: 22rem;
+}
+
+/* .card.recording .card-body {
+    background-image: url(/assets/brickets.jpg);
+    color: white;
+} */

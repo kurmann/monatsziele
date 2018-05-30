@@ -13,6 +13,7 @@ export const RECORDINGINITDATA: Recording[] = [
         goalIds: ['2e2f2ee4-eaaf-450d-8ebe-b5333dd01bf1'],
         date: new Date(2017, 5, 24),
         itemCreatedDate: new Date(),
-        amount: 1
+        amount: 1,
+        comment: 'Ällgäuwlicka 1918m zusammen mit Hannes Helfenstein'
     }
 ];

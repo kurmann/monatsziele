@@ -29,13 +29,19 @@
 
   </div>
 
-  <div class="mt-4" *ngIf="goal.recordings">
-    <h2>Einträge</h2>
-    <div class="card mb-4" *ngFor="let recording of goal.recordings">
-      <div class="card-header">Eintrag</div>
+  <h2 *ngIf="goal.recordings" class="mt-4">Einträge</h2>
+  <div class="d-lg-flex" *ngIf="goal.recordings">
+    <div class="card recording mb-4 mr-4" *ngFor="let recording of goal.recordings">
+      <img class="card-img-top" src="../assets/brickets.jpg" alt="Card image cap">
+      <div class="card-header">Eintrag am {{recording.date | date:'yyyy-MM-dd'}}</div>
       <div class="card-body">
-        <h5 class="card-title">Datum: {{recording.date | date:'yyyy-MM-dd'}}</h5>
-        <div class="card-text">Wert: {{recording.amount}}</div>
+        <div class="card-text">
+            <dl class="row">
+                <dt *ngIf="recording.amount" class="col-5">Wert:</dt>
+                <dd *ngIf="recording.amount" class="col-7">{{recording.amount}}</dd>
+                <dt *ngIf="recording.comment" class="col-sm-5">Kommentar:</dt>
+                <dd *ngIf="recording.comment" class="col-sm-7">{{recording.comment}}</dd>
+              </dl>
       </div>
     </div>
   </div>
