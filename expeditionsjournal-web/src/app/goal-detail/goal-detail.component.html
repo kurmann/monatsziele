@@ -1,5 +1,5 @@
 <div class="container">
-  
+
   <div class="card">
     <a [routerLink]="['/goals']" class="card-link">
       <div class="card-header">{{goal.period}}</div>
@@ -28,4 +28,16 @@
     </div>
 
   </div>
+
+  <div class="mt-4" *ngIf="goal.recordings">
+    <h2>Einträge</h2>
+    <div class="card mb-4" *ngFor="let recording of goal.recordings">
+      <div class="card-header">Eintrag</div>
+      <div class="card-body">
+        <h5 class="card-title">Datum: {{recording.date | date:'yyyy-MM-dd'}}</h5>
+        <div class="card-text">Wert: {{recording.amount}}</div>
+      </div>
+    </div>
+  </div>
+
 </div>

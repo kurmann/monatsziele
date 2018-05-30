@@ -3,12 +3,14 @@ import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
+import { Recording } from '../recording';
 
 @Component({
   templateUrl: './goal-list.component.html',
   styleUrls: ['./goal-list.component.css']
 })
 export class GoalListComponent implements OnInit {
+
   public goals: Goal[];
 
   constructor(

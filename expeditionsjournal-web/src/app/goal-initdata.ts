@@ -1,5 +1,6 @@
 import { Goal } from './goal';
 import { Period } from './period.enum';
+import { RECORDINGINITDATA } from './recording-initdata';
 
 export const GOALSINITDATA: Goal[] = [
     {
@@ -17,7 +18,8 @@ export const GOALSINITDATA: Goal[] = [
         currentAmount: 6,
         targetAmount: 10,
         currentPercentage: 0.6,
-        period: Period.Month
+        period: Period.Month,
+        recordings: RECORDINGINITDATA
     },
     {
         id: '0608728b-ce36-4083-8e86-d03113ad74fb',
