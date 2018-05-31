@@ -8,7 +8,7 @@ import { GoalService } from '../goal-service/goal.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   title = 'Monatsziele';
 
@@ -16,13 +16,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(private _goalService: GoalService) { }
 
-  ngOnInit(): void {
-    this._searchStrings.pipe(debounceTime(1000))
-    .subscribe(searchString => this._goalService.setSearchString(searchString));
-  }
+  // ngOnInit(): void {
+  //   this._searchStrings.pipe(debounceTime(1000))
+  //   .subscribe(searchString => this._goalService.setSearchString(searchString));
+  // }
 
   search(searchString: string): void {
-    this._searchStrings.next(searchString);
+    this._goalService.setSearchString(searchString);
   }
 
 }
