@@ -15,7 +15,7 @@ export class GoalService {
 
   setSearchString(searchString: string) {
     this._searchString.next(searchString);
-    console.log('New search string is set: ', searchString)
+    console.log('New search string is set: ', searchString);
   }
 
   getGoals(): Goal[] {
