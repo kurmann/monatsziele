@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { debounceTime } from 'rxjs/operators';
+import { Subject, Observable } from 'rxjs';
+import { GoalService } from '../goal-service/goal.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +12,17 @@ export class HeaderComponent implements OnInit {
 
   title = 'Monatsziele';
 
-  constructor() { }
+  private _searchStrings = new Subject<string>();
 
-  ngOnInit() {
+  constructor(private _goalService: GoalService) { }
+
+  ngOnInit(): void {
+    this._searchStrings.pipe(debounceTime(1000))
+    .subscribe(searchString => this._goalService.setSearchString(searchString));
+  }
+
+  search(searchString: string): void {
+    this._searchStrings.next(searchString);
   }
 
 }
