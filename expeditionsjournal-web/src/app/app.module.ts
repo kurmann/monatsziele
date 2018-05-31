@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
@@ -9,6 +10,7 @@ import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalDetailComponent } from './goal-detail/goal-detail.component';
 import { GoalUpdateComponent } from './goal-update/goal-update.component';
 import { FilterDetailComponent } from './filter-detail/filter-detail.component';
+import { ImageListComponent } from './image-list/image-list.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { FilterDetailComponent } from './filter-detail/filter-detail.component';
     GoalListComponent,
     GoalDetailComponent,
     GoalUpdateComponent,
-    FilterDetailComponent
+    FilterDetailComponent,
+    ImageListComponent
 ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'goals', component: GoalListComponent },
       { path: 'goals/:id/detail', component: GoalDetailComponent },
