@@ -15,12 +15,12 @@ export class GoalService {
 
   constructor(private _searchService: SearchService) {
 
-    this._searchService.searchString.pipe(debounceTime(1000))
+    this._searchService.searchString.pipe(debounceTime(300))
     .subscribe(searchString => this._updateGoalsBySearchString(searchString));
    }
 
   private _updateGoalsBySearchString(searchString: string) {
-    console.log('Searching goals by ', searchString);
+    console.log('Searching goals by', searchString);
   }
 
   getGoals(): Goal[] {
