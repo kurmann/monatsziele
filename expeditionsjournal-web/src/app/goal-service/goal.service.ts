@@ -11,16 +11,23 @@ import { SearchService } from '../search-service/search.service';
 })
 export class GoalService {
 
-  public readonly goals: BehaviorSubject<Goal[]>;
+  public readonly goals: BehaviorSubject<Goal[]> = new BehaviorSubject<Goal[]>([]);
 
   constructor(private _searchService: SearchService) {
 
     this._searchService.searchString.pipe(debounceTime(300))
-    .subscribe(searchString => this._updateGoalsBySearchString(searchString));
-   }
+      .subscribe(searchString => this._updateGoalsBySearchString(searchString));
+  }
 
   private _updateGoalsBySearchString(searchString: string) {
-    console.log('Searching goals by', searchString);
+    console.log('Search string:', searchString);
+    if (searchString) {
+      const filteredGoalData = new Array<Goal>();
+      filteredGoalData.push(GOALSINITDATA[1]);
+      this.goals.next(filteredGoalData);
+    } else {
+      this.goals.next(GOALSINITDATA);
+    }
   }
 
   getGoals(): Goal[] {
