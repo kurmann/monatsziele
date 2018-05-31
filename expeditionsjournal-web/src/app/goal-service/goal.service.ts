@@ -18,7 +18,7 @@ export class GoalService {
   constructor() {
     console.log('onInit');
     this._searchString.pipe(debounceTime(1000))
-    .subscribe(searchString => console.log('subscribed: ', searchString));
+    .subscribe(searchString => this._updateGoalsBySearchString(searchString));
    }
 
   setSearchString(searchString: string) {
@@ -26,16 +26,6 @@ export class GoalService {
   }
   private _updateGoalsBySearchString(searchString: string) {
     console.log('Searching goals by ', searchString);
-    const data = GOALSINITDATA;
-    data.push({
-      id: '8cd8daf1-b7d2-4bef-9fb1-456f3c4f95f0',
-      name: 'Angular Lektionen lernen',
-      targetAmount: 25,
-      currentAmount: 22,
-      currentPercentage: 0.88,
-      period: Period.Month
-    });
-    this.goals.next(GOALSINITDATA);
   }
 
   getGoals(): Goal[] {
