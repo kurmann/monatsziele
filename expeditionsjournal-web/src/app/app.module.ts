@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalDetailComponent } from './goal-detail/goal-detail.component';
 import { GoalUpdateComponent } from './goal-update/goal-update.component';
+import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GoalUpdateComponent } from './goal-update/goal-update.component';
     AboutComponent,
     GoalListComponent,
     GoalDetailComponent,
-    GoalUpdateComponent
+    GoalUpdateComponent,
+    FilterDetailComponent
 ],
   imports: [
     BrowserModule,

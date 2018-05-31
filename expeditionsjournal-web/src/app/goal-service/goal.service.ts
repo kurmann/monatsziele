@@ -20,7 +20,6 @@ export class GoalService {
   }
 
   private _updateGoalsBySearchString(searchString: string) {
-    console.log('Search string:', searchString);
     if (searchString) {
       const filteredGoalData = new Array<Goal>();
       filteredGoalData.push(GOALSINITDATA[1]);
