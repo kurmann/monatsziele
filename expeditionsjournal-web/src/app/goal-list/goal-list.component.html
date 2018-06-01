@@ -1,9 +1,8 @@
+<app-filter-detail></app-filter-detail>
+
 <div class="container">
-  <div class="row">
-    <app-filter-detail class="col-12 ml-2"></app-filter-detail>
-  </div>
   <div class="d-flex">
-    <div class="card mb-4 ml-4" style="width: 22rem;" *ngFor="let goal of goals">
+    <div class="card mb-4 mr-4" style="width: 22rem;" *ngFor="let goal of goals">
       <a [routerLink]="['/goals', goal.id, 'detail']" class="card-link">
         <div class="card-header">{{goal.period}}</div>
         <div class="card-body">
@@ -20,7 +19,6 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <app-image-list></app-image-list>
-  </div>
 </div>
+
+<app-image-list></app-image-list>
