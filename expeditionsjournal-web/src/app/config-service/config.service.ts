@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Config } from './Config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
 
-  configUrl = 'assets/config.json';
+  private configUrl = 'assets/config.json';
 
   constructor(private _httpClient: HttpClient) { }
 
   getConfig() {
-    return this._httpClient.get(this.configUrl);
+    return this._httpClient.get<Config>(this.configUrl);
   }
 
 }
