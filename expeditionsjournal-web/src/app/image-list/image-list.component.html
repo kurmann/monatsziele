@@ -1,11 +1,13 @@
 <div class="container">
   <h2>Bildersuche</h2>
 
-  <div class="card" *ngFor="let image of images">
-    <div class="card-body">
-      <h4 class="card-title">Gefundene Bilder</h4>
-      <p class="card-text">{{image.id}}</p>
-    </div>
-  </div>
+<div class="d-flex">
+      <div class="card mr-2" style="width: 200px"  *ngFor="let image of images">
+        <img class="card-img-top" [src]='image.urls.thumb' alt="Card image cap">
+        <div class="card-footer">
+          Von <i>{{image.user.name}}</i>
+        </div>
+      </div>
+</div>
 
 </div>
