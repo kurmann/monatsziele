@@ -13,12 +13,12 @@ export class ImageService {
   constructor(private _httpClient: HttpClient, private _configService: ConfigService) {
     this._configService.getConfig().subscribe(config => {
       this._config = config;
-      console.log('Client URL:', this._config.connections.unsplash.clientId);
     });
   }
 
   getImages() {
-    console.log('Executed test images');
+    const url = this._config.connections.unsplash.url + '/photos/?client_id=' + this._config.connections.unsplash.clientId;
+    return this._httpClient.get(url).subscribe(images => console.log(JSON.stringify(images)));
   }
 
 }
