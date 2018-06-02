@@ -10,15 +10,20 @@ export class ImageService {
 
   _config: Config;
 
-  constructor(private _httpClient: HttpClient, private _configService: ConfigService) {
-    this._configService.getConfig().subscribe(config => {
-      this._config = config;
-    });
-  }
+  constructor(private _httpClient: HttpClient, private _configService: ConfigService) { }
 
   getImages() {
-    const url = this._config.connections.unsplash.url + '/photos/?client_id=' + this._config.connections.unsplash.clientId;
-    return this._httpClient.get(url).subscribe(images => console.log(JSON.stringify(images)));
+
+    this._configService.getConfig().subscribe(
+      config => this._config = config,
+      error => console.log(error),
+      () => {
+        const url = this._config.connections.unsplash.url + '/photos/?client_id=' + this._config.connections.unsplash.clientId;
+        return this._httpClient.get(url).subscribe(images => console.log(JSON.stringify(images)));
+      }
+    );
+
+
   }
 
 }
