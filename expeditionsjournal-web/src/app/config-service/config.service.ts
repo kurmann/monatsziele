@@ -11,8 +11,8 @@ export class ConfigService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  getConfig() {
-    return this._httpClient.get<Config>(this.configUrl);
+  getConfig(): Promise<Config> {
+    return this._httpClient.get<Config>(this.configUrl).toPromise();
   }
 
 }

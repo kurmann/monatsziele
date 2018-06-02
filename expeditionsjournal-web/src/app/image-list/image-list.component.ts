@@ -12,11 +12,8 @@ export class ImageListComponent implements OnInit {
   images: UnsplashImage[];
   constructor(private _imageService: ImageService) { }
 
-  ngOnInit() {
-    this._imageService.getImages().subscribe(images => {
-      this.images = images;
-      console.log(images[0].id);
-    });
+  async ngOnInit() {
+    this.images = await this._imageService.getImages();
   }
 
 }

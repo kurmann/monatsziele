@@ -11,21 +11,13 @@ import { Observable } from 'rxjs';
 export class ImageService {
 
   _config: Config;
-  _images: Observable<UnsplashImage[]> = new Observable<UnsplashImage[]>();
 
   constructor(private _httpClient: HttpClient, private _configService: ConfigService) { }
 
-  getImages(): Observable<UnsplashImage[]> {
+  async getImages() {
 
-    this._configService.getConfig().subscribe(
-      config => this._config = config,
-      error => console.log(error),
-      () => {
-        const url = this._config.connections.unsplash.url + '/photos/?client_id=' + this._config.connections.unsplash.clientId;
-        this._images = this._httpClient.get<UnsplashImage[]>(url);
-      }
-    );
-
-    return this._images;
+    this._config = await this._configService.getConfig();
+    const url = this._config.connections.unsplash.url + '/photos/?client_id=' + this._config.connections.unsplash.clientId;
+    return this._httpClient.get<UnsplashImage[]>(url).toPromise();
   }
 }
