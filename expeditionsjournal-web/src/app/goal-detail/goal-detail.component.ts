@@ -38,10 +38,19 @@ export class GoalDetailComponent implements OnInit {
   toggleAddRecording() {
     this.recording = new Recording();
     this.recording.date = new Date();
+    this.recording.amount = 1;
     this.isOnAddRecordingToggled = !this.isOnAddRecordingToggled;
   }
 
   onSubmitCreateRecording(form: NgForm) {
     console.log(form.value);
+  }
+
+  increaseAmount(): void {
+    this.recording.amount += 1;
+  }
+
+  decreaseAmount(): void {
+    this.recording.amount -= 1;
   }
 }
