@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Recording } from '../recording';
 
 @Component({
   selector: 'app-recording-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recording-list.component.css']
 })
 export class RecordingListComponent implements OnInit {
+
+  @Input() recordings: Recording[];
 
   constructor() { }
 

@@ -1,5 +1,12 @@
-<div class="container">
-  <p>
-    recording-list works!
-  </p>
+<div *ngIf='recordings' class="mt-4">
+  <h2>Einträge</h2>
+  <div class="d-flex">
+    <div class="card recording mb-4 mr-4" style="width: 22rem" *ngFor="let recording of recordings">
+      <div class="card-header">Eintrag am {{recording.date | date:'yyyy-MM-dd'}}</div>
+      <div class="card-body">
+        <div class="card-text">{{recording.comment}}</div>
+      </div>
+      <div class="card-footer"></div>
+    </div>
+  </div>
 </div>

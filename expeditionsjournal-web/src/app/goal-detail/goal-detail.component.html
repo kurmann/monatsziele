@@ -24,18 +24,6 @@
 
   </div>
 
-  <h2 *ngIf="goal.recordings" class="mt-4">Einträge</h2>
-  <div class="d-md-flex" *ngIf="goal.recordings">
-    <div class="card recording mb-4 mr-4" *ngFor="let recording of goal.recordings">
-      <div class="card-header">Eintrag am {{recording.date | date:'yyyy-MM-dd'}}</div>
-      <div class="card-body">
-        <div class="card-text">
-          <app-recording-list></app-recording-list>
-        </div>
-
-      </div>
-      <div class="card-footer"></div>
-    </div>
-  </div>
+  <app-recording-list [recordings]='goal.recordings'></app-recording-list>
 
 </div>
