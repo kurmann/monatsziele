@@ -13,8 +13,3 @@ h2 {
     opacity: 0.93;
 
 }
-
-.card.recording .card-footer {
-    background-image: url('../../assets/brickets.jpg');
-    min-height: 2.4rem;
-}
