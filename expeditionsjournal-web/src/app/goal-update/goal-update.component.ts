@@ -1,15 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { GoalService } from "../goal-service/goal.service";
-import { Goal } from "../goal";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GoalService } from '../goal-service/goal.service';
+import { Goal } from '../goal';
 
 @Component({
-  selector: "app-goal-update",
-  templateUrl: "./goal-update.component.html",
-  styleUrls: ["./goal-update.component.css"]
+  selector: 'app-goal-update',
+  templateUrl: './goal-update.component.html',
+  styleUrls: ['./goal-update.component.css']
 })
 export class GoalUpdateComponent implements OnInit {
-  
   goal: Goal;
 
   constructor(
@@ -19,11 +18,11 @@ export class GoalUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get("id");
+    const id = this.route.snapshot.paramMap.get('id');
     this.goal = this.goalService.getGoal(id);
   }
 
-  onSaveUpdate(){
+  onSaveUpdate() {
     this.router.navigate(['/goals', this.goal.id, 'detail']);
   }
 

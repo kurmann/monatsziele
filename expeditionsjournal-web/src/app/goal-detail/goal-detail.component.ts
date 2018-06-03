@@ -9,26 +9,34 @@ import { Recording } from '../recording';
   styleUrls: ['./goal-detail.component.css']
 })
 export class GoalDetailComponent implements OnInit {
-
   public goal: Goal;
   public isOnAddRecordingToggled: boolean;
+  public recording: Recording;
 
-  constructor(private route: ActivatedRoute, private router: Router, private goalService: GoalService) { }
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _goalService: GoalService
+  ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.goal = this.goalService.getGoal(id);
+    const id = this._route.snapshot.paramMap.get('id');
+    this.goal = this._goalService.getGoal(id);
   }
 
   onBack() {
-    this.router.navigate(['/goals']);
+    this._router.navigate(['/goals']);
   }
 
   onGoalUpdate() {
-    this.router.navigate(['/goals', this.goal.id, 'update'], { relativeTo: this.route });
+    this._router.navigate(['/goals', this.goal.id, 'update'], {
+      relativeTo: this._route
+    });
   }
 
   toggleAddRecording() {
+    this.recording = new Recording();
+    this.recording.date = new Date();
     this.isOnAddRecordingToggled = !this.isOnAddRecordingToggled;
   }
 }
