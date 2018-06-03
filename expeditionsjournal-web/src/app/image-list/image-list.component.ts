@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image-service/image.service';
 import { UnsplashImage } from '../image-service/UnsplashImage';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-image-list',
@@ -12,8 +13,10 @@ export class ImageListComponent implements OnInit {
   images: UnsplashImage[];
   constructor(private _imageService: ImageService) { }
 
-  async ngOnInit() {
-    this.images = await this._imageService.getImages();
+  ngOnInit() {
+    this._imageService.getImages().subscribe(images => {
+      this.images = images;
+    });
   }
 
 }

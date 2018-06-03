@@ -11,7 +11,6 @@ import { GoalDetailComponent } from './goal-detail/goal-detail.component';
 import { GoalUpdateComponent } from './goal-update/goal-update.component';
 import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 import { ImageListComponent } from './image-list/image-list.component';
-import { ConfigService } from './config-service/config.service';
 
 @NgModule({
   declarations: [

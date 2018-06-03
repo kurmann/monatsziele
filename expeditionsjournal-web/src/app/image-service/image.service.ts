@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ConfigService } from '../config-service/config.service';
-import { Config } from '../config-service/Config';
 import { UnsplashImage } from './UnsplashImage';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
+  _unsplashConnection: any;
 
-  _config: Config;
+  constructor(private _httpClient: HttpClient) {}
 
-  constructor(private _httpClient: HttpClient, private _configService: ConfigService) { }
+  getImages(): Observable<UnsplashImage[]> {
 
-  async getImages() {
+    const url =
+      environment.connections.unsplash.url +
+      '/photos/?client_id=' +
+      environment.connections.unsplash.clientId;
 
-    this._config = await this._configService.getConfig();
-    const url = this._config.connections.unsplash.url + '/photos/?client_id=' + this._config.connections.unsplash.clientId;
-    return this._httpClient.get<UnsplashImage[]>(url).toPromise();
+    return this._httpClient.get<UnsplashImage[]>(url);
   }
 }
