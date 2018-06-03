@@ -17,16 +17,18 @@
         </div>
       </div>
     </a>
-    <div class="card-footer">
+
+    <div *ngIf="!isOnAddRecordingToggled" class="card-footer">
       <button *ngIf="!isOnAddRecordingToggled" type="button" class="btn btn-primary mr-2" (click)="toggleAddRecording()">Neuer Eintrag</button>
-      <button *ngIf="isOnAddRecordingToggled" type="button" class="btn btn-primary mr-2" (click)="toggleAddRecording()">Eintrag speichern</button>
-      <button *ngIf="isOnAddRecordingToggled" type="button" class="btn btn-outline-primary mr-2" (click)="toggleAddRecording()">Abbrechen</button>
       <button type="button" class="btn btn-outline-primary ml-2 float-right ml-2" (click)="onBack()">Zurück zur Übersicht</button>
       <button *ngIf="!isOnAddRecordingToggled" type="button" class="btn btn-primary float-right ml-2" (click)="onGoalUpdate()">Ziel anpassen</button>
     </div>
+
     <div *ngIf='isOnAddRecordingToggled' class="card-footer">
-      <form>
-        <div class="form-group row">
+      <form #form="ngForm" (submit)="onSubmitCreateRecording(form)">
+        <button *ngIf="isOnAddRecordingToggled" type="submit" class="btn btn-primary mr-2">Eintrag speichern</button>
+        <button *ngIf="isOnAddRecordingToggled" type="button" class="btn btn-outline-primary mr-2" (click)="toggleAddRecording()">Abbrechen</button>
+        <div class="form-group row mt-4">
           <label for="recordingInputField" class="col-sm-2 col-form-label">Datum</label>
           <div class="col-sm-4">
             <input type="date" class="form-control" id="recordingInputField" name="date" [(ngModel)]="recording.date">
@@ -37,11 +39,12 @@
           <div class="col-sm-10">
             <input #comment="ngModel" [class.is-invalid]="comment.invalid && comment.dirty" required type="text" class="form-control"
               id="commentInputField" name="comment" [(ngModel)]="recording.comment">
-              <div class="invalid-feedback">Bitte Kommentar abgeben</div>
+            <div class="invalid-feedback">Bitte Kommentar abgeben</div>
           </div>
         </div>
       </form>
     </div>
+    
   </div>
 
   <app-recording-list [recordings]='goal.recordings'></app-recording-list>

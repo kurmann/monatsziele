@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
 import { Recording } from '../recording';
+import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './goal-detail.component.html',
@@ -38,5 +39,9 @@ export class GoalDetailComponent implements OnInit {
     this.recording = new Recording();
     this.recording.date = new Date();
     this.isOnAddRecordingToggled = !this.isOnAddRecordingToggled;
+  }
+
+  onSubmitCreateRecording(form: NgForm) {
+    console.log(form.value);
   }
 }
