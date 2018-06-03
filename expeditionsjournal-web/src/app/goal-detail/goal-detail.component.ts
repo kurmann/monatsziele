@@ -11,6 +11,7 @@ import { Recording } from '../recording';
 export class GoalDetailComponent implements OnInit {
 
   public goal: Goal;
+  public isOnAddRecordingToggled: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private goalService: GoalService) { }
 
@@ -23,7 +24,11 @@ export class GoalDetailComponent implements OnInit {
     this.router.navigate(['/goals']);
   }
 
-  onUpdate() {
+  onGoalUpdate() {
     this.router.navigate(['/goals', this.goal.id, 'update'], { relativeTo: this.route });
+  }
+
+  toggleAddRecording() {
+    this.isOnAddRecordingToggled = !this.isOnAddRecordingToggled;
   }
 }
