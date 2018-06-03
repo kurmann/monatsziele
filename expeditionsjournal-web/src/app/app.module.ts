@@ -11,6 +11,7 @@ import { GoalDetailComponent } from './goal-detail/goal-detail.component';
 import { GoalUpdateComponent } from './goal-update/goal-update.component';
 import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 import { ImageListComponent } from './image-list/image-list.component';
+import { RecordingListComponent } from './recording-list/recording-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ImageListComponent } from './image-list/image-list.component';
     GoalDetailComponent,
     GoalUpdateComponent,
     FilterDetailComponent,
-    ImageListComponent
+    ImageListComponent,
+    RecordingListComponent
 ],
   imports: [
     BrowserModule,
