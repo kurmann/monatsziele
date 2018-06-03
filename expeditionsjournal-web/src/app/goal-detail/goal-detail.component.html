@@ -35,7 +35,8 @@
         <div class="form-group row">
           <label for="commentInputField" class="col-sm-2 col-form-label">Beschreibung</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="commentInputField" name="comment" [(ngModel)]="recording.comment">
+            <input #comment="ngModel" required type="text" class="form-control" id="commentInputField" name="comment" [(ngModel)]="recording.comment">
+            <div *ngIf="comment.invalid && comment.dirty" class="alert alert-danger">Bitte Kommentar abgeben</div>
           </div>
         </div>
       </form>
