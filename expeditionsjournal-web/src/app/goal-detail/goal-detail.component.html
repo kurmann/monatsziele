@@ -4,13 +4,16 @@
     <a [routerLink]="['/goals']" class="card-link">
       <div class="card-header">{{goal.period}}</div>
       <div class="card-body">
-        <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
+        <div class="row">
+          <p class="col-sm-3">Ziel</p>
+          <h5 class="card-title col-sm-9" *ngIf="goal.name">{{goal.name}}</h5>
+        </div>
         <div class="card-text">
-          <dl class="row">
+          <dl class="row mb-0">
             <dt *ngIf="goal.description" class="col-sm-3">Beschreibung:</dt>
             <dd *ngIf="goal.description" class="col-sm-9">{{goal.description}}</dd>
             <dt *ngIf="goal.currentAmount" class="col-sm-3">Aktueller Wert:</dt>
-            <dd *ngIf="goal.currentAmount" class="col-sm-9">{{goal.currentAmount}}</dd>
+            <dd *ngIf="goal.currentAmount" class="col-sm-9 font-weight-bold">{{goal.currentAmount}}</dd>
             <dt *ngIf="goal.targetAmount" class="col-sm-3">Zielwert:</dt>
             <dd *ngIf="goal.targetAmount" class="col-sm-9">{{goal.targetAmount}}</dd>
           </dl>

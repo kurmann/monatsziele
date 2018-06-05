@@ -8,3 +8,7 @@ body {
     background-image: url(/assets/ludwigshoehe-1080.jpg);
     padding-top: 2em;
 }
+
+dl dt {
+    font-weight: normal;
+}
