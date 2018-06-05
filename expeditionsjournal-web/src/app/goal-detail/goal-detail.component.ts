@@ -45,12 +45,4 @@ export class GoalDetailComponent implements OnInit {
   onSubmitCreateRecording(form: NgForm) {
     console.log(form.value);
   }
-
-  increaseAmount(): void {
-    this.recording.amount += 1;
-  }
-
-  decreaseAmount(): void {
-    this.recording.amount -= 1;
-  }
 }
