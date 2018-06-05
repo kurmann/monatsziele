@@ -21,11 +21,6 @@ export class Recording {
     amount: number;
 
     /**
-     * The unit of measurement for the amount
-     */
-    amountUnitOfMeasurement?: string;
-
-    /**
      * Recording comment
      */
     comment?: string;

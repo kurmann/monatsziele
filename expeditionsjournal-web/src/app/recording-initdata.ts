@@ -6,7 +6,6 @@ export const RECORDINGINITDATA: Recording[] = [
         goalIds: ['2e2f2ee4-eaaf-450d-8ebe-b5333dd01bf1'],
         date: new Date(2017, 5, 28),
         itemCreatedDate: new Date(),
-        amountUnitOfMeasurement: 'Trainingssession',
         amount: 1
     },
     {
@@ -15,7 +14,6 @@ export const RECORDINGINITDATA: Recording[] = [
         date: new Date(2017, 5, 24),
         itemCreatedDate: new Date(),
         amount: 1,
-        amountUnitOfMeasurement: 'Trainingssession',
         comment: 'Ällgäuwlicka 1918m zusammen mit Hannes Helfenstein'
     }
 ];

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recording } from '../recording';
+import { Goal } from '../goal';
 
 @Component({
   selector: 'app-recording-list',
@@ -9,6 +10,7 @@ import { Recording } from '../recording';
 export class RecordingListComponent implements OnInit {
 
   @Input() recordings: Recording[];
+  @Input() goal: Goal;
 
   constructor() { }
 
