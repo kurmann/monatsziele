@@ -3,7 +3,7 @@
 @import "~font-awesome/css/font-awesome.css";
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: lightgray;
     background-image: url(/assets/ludwigshoehe-1080.jpg);
     padding-top: 2em;
