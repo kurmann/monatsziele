@@ -29,23 +29,33 @@
 
     <div *ngIf='isOnAddRecordingToggled' class="card-footer">
       <form #form="ngForm" (submit)="onSubmitCreateRecording(form)">
-        <button *ngIf="isOnAddRecordingToggled" type="submit" style="min-width: 9.3rem" class="btn btn-primary mr-2">Eintrag speichern</button>
-        <button *ngIf="isOnAddRecordingToggled" type="button" class="btn btn-outline-primary mr-2" (click)="toggleAddRecording()">Abbrechen</button>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button *ngIf="isOnAddRecordingToggled" type="submit" style="min-width: 9.3rem" class="btn btn-primary mr-2">Eintrag speichern</button>
+            <button *ngIf="isOnAddRecordingToggled" type="button" class="btn btn-outline-primary" (click)="toggleAddRecording()">Abbrechen</button>
+          </div>
+        </div>
+
         <div class="form-group row mt-4">
-          <label for="recordingInputField" class="col-sm-2 col-form-label">Datum</label>
+          <label class="col-sm-2 col-form-label" for="recordingInputField">Datum</label>
           <div class="col-sm-4">
             <input type="date" class="form-control" id="recordingInputField" name="date" [(ngModel)]="recording.date">
           </div>
-          <div class="col-sm-1"></div>
-          <div class="col-sm-5">
-            <div class="d-flex">
-              <label for="recordingAmountField" class="col-form-label mr-4">{{goal.amountUnitOfMeasurement}}</label>
-              <input type="number" class="form-control" id="recordingAmountField" name="amount" [(ngModel)]="recording.amount">
-              <button class="btn btn-outline-primary ml-2" style="width: 2.7rem" (click)="increaseAmount()">+</button>
-              <button class="btn btn-outline-primary ml-2" style="width: 2.7rem" (click)="decreaseAmount()">-</button>
-            </div>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="recordingAmountField" class="col-form-label col-sm-2">{{goal.amountUnitOfMeasurement}}</label>
+          <div class="col-sm-2">
+            <input type="number" class="form-control" id="recordingAmountField" name="amount" [(ngModel)]="recording.amount">
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-outline-primary ml-2" style="width: 2.5rem" (click)="increaseAmount()">+</button>
+            <button class="btn btn-outline-primary ml-2" style="width: 2.5rem" (click)="decreaseAmount()">-</button>
           </div>
         </div>
+
         <div class="form-group row">
           <label for="commentInputField" class="col-sm-2 col-form-label">Beschreibung</label>
           <div class="col-sm-10">
