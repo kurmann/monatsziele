@@ -36,7 +36,7 @@
           <div class="col-sm-1"></div>
           <div class="col-sm-5">
             <div class="d-flex">
-                <label for="recordingAmountField" class="col-form-label mr-4">Anzahl</label>
+                <label for="recordingAmountField" class="col-form-label mr-4">{{recording.amountUnitOfMeasurement}}</label>
               <input type="number" class="form-control" id="recordingAmountField" name="amount" [(ngModel)]="recording.amount">
               <button class="btn btn-outline-primary ml-2" style="width: 2.7rem" (click)="increaseAmount()">+</button>
               <button class="btn btn-outline-primary ml-2" style="width: 2.7rem" (click)="decreaseAmount()">-</button>

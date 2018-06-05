@@ -8,6 +8,7 @@ export class Goal {
     period: Period;
     currentAmount: number;
     targetAmount: number;
+    amountUnitOfMeasurement?: string;
     currentPercentage?: number;
     recordings?: Recording[];
 }

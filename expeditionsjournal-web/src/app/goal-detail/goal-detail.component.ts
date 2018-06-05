@@ -39,6 +39,7 @@ export class GoalDetailComponent implements OnInit {
     this.recording = new Recording();
     this.recording.date = new Date();
     this.recording.amount = 1;
+    this.recording.amountUnitOfMeasurement = this.goal.amountUnitOfMeasurement;
     this.isOnAddRecordingToggled = !this.isOnAddRecordingToggled;
   }
 

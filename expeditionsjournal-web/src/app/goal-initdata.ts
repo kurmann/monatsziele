@@ -9,6 +9,7 @@ export const GOALSINITDATA: Goal[] = [
         targetAmount: 25,
         currentAmount: 22,
         currentPercentage: 0.88,
+        amountUnitOfMeasurement: 'Lektion',
         period: Period.Month
     },
     {
@@ -19,6 +20,7 @@ export const GOALSINITDATA: Goal[] = [
         targetAmount: 10,
         currentPercentage: 0.6,
         period: Period.Month,
+        amountUnitOfMeasurement: 'Trainingssession',
         recordings: RECORDINGINITDATA
     },
     {
@@ -28,6 +30,7 @@ export const GOALSINITDATA: Goal[] = [
         currentAmount: 12,
         targetAmount: 20,
         currentPercentage: 0.6,
+        amountUnitOfMeasurement: 'Tanzlektion',
         period: Period.Month
     }
 ];
