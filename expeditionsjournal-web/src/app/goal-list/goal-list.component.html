@@ -1,22 +1,24 @@
 <app-filter-detail></app-filter-detail>
 
 <div class="container">
-  <div class="d-flex">
-    <div class="card mb-4 mr-4" style="width: 22rem;" *ngFor="let goal of goals">
-      <a [routerLink]="['/goals', goal.id, 'detail']" class="card-link">
-        <div class="card-header">{{goal.period}}</div>
-        <div class="card-body">
-          <h5 class="card-title">{{goal.name}}</h5>
-          <p class="card-text">{{goal.description}}</p>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" [attr.style]='getWidthStylePercentageValue(goal.currentPercentage)' [attr.aria-valuenow]='goal.currentAmount'
-              aria-valuemin="0" [attr.aria-valuemax]='goal.targetAmount'>{{goal.currentAmount}} / {{goal.targetAmount}}</div>
+<div class="row justify-content-center">
+    <div class="d-inline-block" *ngFor="let goal of goals">
+      <div class="card mb-4 mr-4" style="width: 21.5rem;">
+        <a [routerLink]="['/goals', goal.id, 'detail']" class="card-link">
+          <div class="card-header">{{goal.period}}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{goal.name}}</h5>
+            <p class="card-text">{{goal.description}}</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [attr.style]='getWidthStylePercentageValue(goal.currentPercentage)' [attr.aria-valuenow]='goal.currentAmount'
+                aria-valuemin="0" [attr.aria-valuemax]='goal.targetAmount'>{{goal.currentAmount}} / {{goal.targetAmount}}</div>
+            </div>
           </div>
+        </a>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-primary float-right" (click)='onDetail(goal.id)'>Detail</button>
         </div>
-      </a>
-      <div class="card-footer">
-        <button type="button" class="btn btn-outline-primary float-right" (click)='onDetail(goal.id)'>Detail</button>
       </div>
     </div>
-  </div>
+</div>
 </div>
