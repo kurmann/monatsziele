@@ -5,19 +5,19 @@
       <div class="card-header">{{goal.period}}</div>
       <div class="card-body">
         <dl class="row mb-0">
-          <dt class="col-lg-3">Ziel</dt>
-          <dd class="col-lg-9">
+          <dt class="col-md-3">Ziel</dt>
+          <dd class="col-md-9">
             <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
           </dd>
         </dl>
         <div class="card-text">
           <dl class="row mb-0">
-            <dt *ngIf="goal.description" class="col-lg-3">Beschreibung:</dt>
-            <dd *ngIf="goal.description" class="col-lg-9">{{goal.description}}</dd>
-            <dt *ngIf="goal.currentAmount" class="col-lg-3">Aktueller Wert:</dt>
-            <dd *ngIf="goal.currentAmount" class="col-lg-9 font-weight-bold">{{goal.currentAmount}}</dd>
-            <dt *ngIf="goal.targetAmount" class="col-lg-3">Zielwert:</dt>
-            <dd *ngIf="goal.targetAmount" class="col-lg-9">{{goal.targetAmount}}</dd>
+            <dt *ngIf="goal.description" class="col-md-3">Beschreibung:</dt>
+            <dd *ngIf="goal.description" class="col-md-9">{{goal.description}}</dd>
+            <dt *ngIf="goal.currentAmount" class="col-md-3">Aktueller Wert:</dt>
+            <dd *ngIf="goal.currentAmount" class="col-md-9 font-weight-bold">{{goal.currentAmount}}</dd>
+            <dt *ngIf="goal.targetAmount" class="col-md-3">Zielwert:</dt>
+            <dd *ngIf="goal.targetAmount" class="col-md-9">{{goal.targetAmount}}</dd>
           </dl>
         </div>
       </div>
