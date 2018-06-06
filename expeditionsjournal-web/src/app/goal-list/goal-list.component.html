@@ -5,7 +5,7 @@
   <div class="card-columns">
     <div class="card mb-4 mr-4" *ngFor="let goal of goals">
       <a [routerLink]="['/goals', goal.id, 'detail']" class="card-link">
-        <div class="card-header">{{goal.period}}</div>
+        <div class="card-header">Monatsziel</div>
         <div class="card-body">
           <h5 class="card-title">{{goal.name}}</h5>
           <p class="card-text">{{goal.description}}</p>
