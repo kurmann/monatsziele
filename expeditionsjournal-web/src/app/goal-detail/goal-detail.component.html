@@ -23,7 +23,7 @@
       </div>
     </a>
 
-    <div *ngIf="!isOnAddRecordingToggled" class="card-footer">
+    <div *ngIf="!isOnAddRecordingToggled" class="card-footer d-print-none">
       <button *ngIf="!isOnAddRecordingToggled" type="button" style="min-width: 9.3rem" class="btn btn-primary mr-2" (click)="toggleAddRecording()">Neuer Eintrag</button>
       <button type="button" class="btn btn-outline-primary ml-2 float-right ml-2" (click)="onBack()">Zurück zur Übersicht</button>
       <button *ngIf="!isOnAddRecordingToggled" type="button" class="btn btn-primary float-right ml-2" (click)="onGoalUpdate()">Ziel anpassen</button>
@@ -32,7 +32,7 @@
     <div *ngIf='isOnAddRecordingToggled' class="card-footer">
       <form #form="ngForm" (submit)="onSubmitCreateRecording(form)">
 
-        <div class="form-group row">
+        <div class="form-group row d-print-none">
           <div class="col-lg-12">
             <button *ngIf="isOnAddRecordingToggled" type="submit" style="min-width: 9.3rem" class="btn btn-primary mr-2">Eintrag speichern</button>
             <button *ngIf="isOnAddRecordingToggled" type="button" class="btn btn-outline-primary float-right" (click)="toggleAddRecording()">Abbrechen</button>
