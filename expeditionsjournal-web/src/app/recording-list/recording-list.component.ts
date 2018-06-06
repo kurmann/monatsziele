@@ -10,7 +10,7 @@ import { Goal } from '../goal';
 export class RecordingListComponent implements OnInit {
 
   @Input() recordings: Recording[];
-  @Input() goal: Goal;
+  @Input() amountUnitOfMeasurement: string;
 
   constructor() { }
 

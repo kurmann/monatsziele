@@ -5,7 +5,7 @@
       <div class="card-header">Eintrag am {{recording.date | date:'yyyy-MM-dd'}}</div>
       <div class="card-body">
         <div class="card-text">
-          <p *ngIf="recording.amount">{{recording.amount}} {{goal.amountUnitOfMeasurement}}</p>
+          <p *ngIf="recording.amount">{{recording.amount}} {{amountUnitOfMeasurement}}</p>
           <p class="font-weight-bold mb-0" *ngIf="recording.comment">{{recording.comment}}</p>
         </div>
       </div>
