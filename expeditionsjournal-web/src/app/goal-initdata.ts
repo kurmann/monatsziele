@@ -32,5 +32,15 @@ export const GOALSINITDATA: Goal[] = [
         currentPercentage: 0.6,
         amountUnitOfMeasurement: 'Tanzlektion',
         period: Period.Month
+    },
+    {
+        id: 'd8c2607f-7de7-460d-9c86-6ff17b0d6ae7',
+        name: 'Freunde treffen',
+        description: 'Mit fünf Freunden abmachen',
+        currentAmount: 14,
+        targetAmount: 20,
+        currentPercentage: 0.6,
+        amountUnitOfMeasurement: 'Treffen',
+        period: Period.Month
     }
 ];

@@ -1,12 +1,36 @@
 .card-link {
-    color: #222;
+  color: #222;
 }
 
 .card-link:hover {
-    color: black;
-    background-color: antiquewhite;
+  color: black;
+  background-color: antiquewhite;
 }
 
 .progress {
   height: 1.3rem;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1600px) {
+    .card-columns {
+        column-count: 4;
+    }
 }

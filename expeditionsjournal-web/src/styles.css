@@ -1,14 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~font-awesome/css/font-awesome.css";
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.css';
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: lightgray;
-    background-image: url(/assets/ludwigshoehe-1080.jpg);
-    padding-top: 2em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: lightgray;
+  background-image: url(/assets/ludwigshoehe-1080.jpg);
+  padding-top: 2em;
 }
 
 dl dt {
-    font-weight: normal;
+  font-weight: normal;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
 }
