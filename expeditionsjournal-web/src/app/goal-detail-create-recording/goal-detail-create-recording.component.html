@@ -3,13 +3,6 @@
   <div class="card-body">
     <form #form="ngForm" (submit)="onSubmitCreateRecording(form)">
 
-      <div class="form-group row d-print-none">
-        <div class="col-lg-12">
-          <button type="submit" style="min-width: 9.3rem" class="btn btn-primary mr-2">Eintrag speichern</button>
-          <button type="button" class="btn btn-outline-primary float-right" (click)="onCancel()">Abbrechen</button>
-        </div>
-      </div>
-
       <h5>Einen neuen Eintrag erstellen</h5>
 
       <div class="row mt-4">
@@ -39,6 +32,14 @@
           <div class="invalid-feedback">Bitte Kommentar abgeben</div>
         </div>
       </div>
+
     </form>
+
   </div>
+
+  <div class="card-footer d-print-none">
+    <button type="submit" style="min-width: 9.3rem" class="btn btn-primary mr-2">Eintrag speichern</button>
+    <button type="button" class="btn btn-outline-primary" (click)="onCancel()">Abbrechen</button>
+  </div>
+
 </div>
