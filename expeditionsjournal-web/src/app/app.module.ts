@@ -12,7 +12,7 @@ import { GoalUpdateComponent } from './goal-update/goal-update.component';
 import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { RecordingListComponent } from './recording-list/recording-list.component';
-import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-buttons-with-create-recording/goal-detail-buttons-with-create-recording.component';
+import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recording/goal-detail-create-recording.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-but
     FilterDetailComponent,
     ImageListComponent,
     RecordingListComponent,
-    GoalDetailButtonsWithCreateRecordingComponent
-  ],
+    GoalDetailCreateRecordingComponent
+],
   imports: [
     BrowserModule,
     FormsModule,
@@ -36,7 +36,7 @@ import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-but
       {
         path: 'goals/:id/detail', component: GoalDetailComponent,
         children: [
-          { path: 'create-recording', component: GoalDetailButtonsWithCreateRecordingComponent }
+          { path: 'create-recording', component: GoalDetailCreateRecordingComponent }
         ]
       },
       { path: 'goals/:id/update', component: GoalUpdateComponent },

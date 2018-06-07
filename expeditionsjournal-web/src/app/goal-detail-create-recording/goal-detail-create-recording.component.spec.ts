@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-buttons-with-create-recording.component';
+import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recording.component';
 
-describe('GoalDetailButtonsWithCreateRecordingComponent', () => {
-  let component: GoalDetailButtonsWithCreateRecordingComponent;
-  let fixture: ComponentFixture<GoalDetailButtonsWithCreateRecordingComponent>;
+describe('GoalDetailCreateRecordingComponent', () => {
+  let component: GoalDetailCreateRecordingComponent;
+  let fixture: ComponentFixture<GoalDetailCreateRecordingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GoalDetailButtonsWithCreateRecordingComponent ]
+      declarations: [ GoalDetailCreateRecordingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GoalDetailButtonsWithCreateRecordingComponent);
+    fixture = TestBed.createComponent(GoalDetailCreateRecordingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
