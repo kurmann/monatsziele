@@ -6,7 +6,12 @@ h2 {
 
 .card-link {
     color: #222;
-}
+  }
+  
+  .card-body:hover {
+    color: black;
+    background-color: antiquewhite;
+  }
 
 .card.recording {
     width: 20rem;
