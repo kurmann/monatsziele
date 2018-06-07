@@ -11,7 +11,6 @@ import { NgForm } from '@angular/forms';
 })
 export class GoalDetailComponent implements OnInit {
   public goal: Goal;
-  public isOnAddRecordingToggled: boolean;
   public recording: Recording;
 
   constructor(
@@ -36,7 +35,6 @@ export class GoalDetailComponent implements OnInit {
   }
 
   toggleAddRecording() {
-
     this._router.navigate(['./create-recording'], {
       relativeTo: this._route
     });
