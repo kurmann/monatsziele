@@ -12,6 +12,8 @@ import { GoalUpdateComponent } from './goal-update/goal-update.component';
 import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { RecordingListComponent } from './recording-list/recording-list.component';
+import { GoalDetailButtonsComponent } from './goal-detail-buttons/goal-detail-buttons.component';
+import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-buttons-with-create-recording/goal-detail-buttons-with-create-recording.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RecordingListComponent } from './recording-list/recording-list.componen
     GoalUpdateComponent,
     FilterDetailComponent,
     ImageListComponent,
-    RecordingListComponent
+    RecordingListComponent,
+    GoalDetailButtonsComponent,
+    GoalDetailButtonsWithCreateRecordingComponent
 ],
   imports: [
     BrowserModule,
