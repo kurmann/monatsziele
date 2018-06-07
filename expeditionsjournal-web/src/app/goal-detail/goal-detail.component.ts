@@ -40,12 +40,6 @@ export class GoalDetailComponent implements OnInit {
     this._router.navigate(['./create-recording'], {
       relativeTo: this._route
     });
-
-    // this.recording = new Recording();
-    // this.recording.date = new Date();
-    // this.recording.amount = 1;
-    // this.isOnAddRecordingToggled = !this.isOnAddRecordingToggled;
-
   }
 
   onSubmitCreateRecording(form: NgForm) {
