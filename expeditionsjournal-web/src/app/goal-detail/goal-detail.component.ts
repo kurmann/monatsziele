@@ -3,7 +3,6 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
 import { Recording } from '../recording';
-import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './goal-detail.component.html',
@@ -34,13 +33,9 @@ export class GoalDetailComponent implements OnInit {
     });
   }
 
-  toggleAddRecording() {
+  onCreateRecording() {
     this._router.navigate(['./create-recording'], {
       relativeTo: this._route
     });
-  }
-
-  onSubmitCreateRecording(form: NgForm) {
-    console.log(form.value);
   }
 }
