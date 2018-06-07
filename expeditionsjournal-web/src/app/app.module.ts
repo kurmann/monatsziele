@@ -24,20 +24,25 @@ import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-but
     GoalDetailComponent,
     GoalUpdateComponent,
     FilterDetailComponent,
-    ImageListComponent,
+    ImageListComponent,
     RecordingListComponent,
     GoalDetailButtonsComponent,
     GoalDetailButtonsWithCreateRecordingComponent
-],
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'goals', component: GoalListComponent },
-      { path: 'goals/:id/detail', component: GoalDetailComponent },
+      {
+        path: 'goals/:id/detail', component: GoalDetailComponent,
+        children: [
+          { path: 'create-recording', component: GoalDetailButtonsWithCreateRecordingComponent }
+        ]
+      },
       { path: 'goals/:id/update', component: GoalUpdateComponent },
-      { path: 'goals/:id',  redirectTo: 'goals/:id/detail', pathMatch: 'full' },
+      { path: 'goals/:id', redirectTo: 'goals/:id/detail', pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },
