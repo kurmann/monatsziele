@@ -38,6 +38,7 @@ import { GoalDetailButtonsWithCreateRecordingComponent } from './goal-detail-but
       {
         path: 'goals/:id/detail', component: GoalDetailComponent,
         children: [
+          { path: '', component: GoalDetailButtonsComponent },
           { path: 'create-recording', component: GoalDetailButtonsWithCreateRecordingComponent }
         ]
       },
