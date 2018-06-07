@@ -19,10 +19,10 @@ export class GoalDetailCreateRecordingComponent implements OnInit {
     const id = this._route.parent.snapshot.paramMap.get('id');
     this.goal = this._goalService.getGoal(id);
 
-    this.recording = this.getNewRecording();
+    this.recording = this._getNewRecording();
   }
 
-  private getNewRecording(): Recording {
+  private _getNewRecording(): Recording {
     const recording = new Recording();
     recording.date = new Date();
     recording.amount = 1;
