@@ -13,6 +13,7 @@ import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { RecordingListComponent } from './recording-list/recording-list.component';
 import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recording/goal-detail-create-recording.component';
+import { GoalDetailsButtonsComponent } from './goal-details-buttons/goal-details-buttons.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recordi
     FilterDetailComponent,
     ImageListComponent,
     RecordingListComponent,
-    GoalDetailCreateRecordingComponent
+    GoalDetailCreateRecordingComponent,
+    GoalDetailsButtonsComponent
 ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recordi
       {
         path: 'goals/:id/detail', component: GoalDetailComponent,
         children: [
+          { path: '', component: GoalDetailsButtonsComponent },
           { path: 'create-recording', component: GoalDetailCreateRecordingComponent }
         ]
       },
