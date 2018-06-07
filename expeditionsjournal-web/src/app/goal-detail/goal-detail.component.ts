@@ -37,7 +37,7 @@ export class GoalDetailComponent implements OnInit {
 
   toggleAddRecording() {
 
-    this._router.navigate(['create-recording'], {
+    this._router.navigate(['./create-recording'], {
       relativeTo: this._route
     });
 
