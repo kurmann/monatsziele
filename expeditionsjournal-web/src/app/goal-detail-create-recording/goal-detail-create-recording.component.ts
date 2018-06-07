@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
 import { Recording } from '../recording';
+import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './goal-detail-create-recording.component.html',
@@ -28,5 +29,9 @@ export class GoalDetailCreateRecordingComponent implements OnInit {
     recording.amount = 1;
 
     return recording;
+  }
+
+  onSubmitCreateRecording(form: NgForm) {
+    console.log(form.value);
   }
 }
