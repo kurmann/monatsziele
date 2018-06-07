@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-goal-detail-buttons',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoalDetailButtonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _route: ActivatedRoute) {
+    this._route.params.subscribe(params => console.log(params));
+   }
 
   ngOnInit() {
   }
