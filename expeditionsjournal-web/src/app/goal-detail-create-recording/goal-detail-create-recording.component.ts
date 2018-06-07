@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
 import { Recording } from '../recording';
@@ -14,7 +14,7 @@ export class GoalDetailCreateRecordingComponent implements OnInit {
   goal: Goal;
   recording: Recording;
 
-  constructor(private _route: ActivatedRoute, private _goalService: GoalService) { }
+  constructor(private _route: ActivatedRoute, private _router: Router, private _goalService: GoalService) { }
 
   ngOnInit() {
     const id = this._route.parent.snapshot.paramMap.get('id');
@@ -33,5 +33,11 @@ export class GoalDetailCreateRecordingComponent implements OnInit {
 
   onSubmitCreateRecording(form: NgForm) {
     console.log(form.value);
+  }
+
+  onCancel() {
+    this._router.navigate(['../'], {
+      relativeTo: this._route
+    });
   }
 }
