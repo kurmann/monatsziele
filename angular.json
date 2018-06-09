@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "expeditionsjournal-web": {
+    "monatsziele-web": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/expeditionsjournal-web",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "expeditionsjournal-web:build"
+            "browserTarget": "monatsziele-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "expeditionsjournal-web:build:production"
+              "browserTarget": "monatsziele-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "expeditionsjournal-web:build"
+            "browserTarget": "monatsziele-web:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "expeditionsjournal-web-e2e": {
+    "monatsziele-web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,7 +103,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "expeditionsjournal-web:serve"
+            "devServerTarget": "monatsziele-web:serve"
           }
         },
         "lint": {
@@ -118,5 +118,5 @@
       }
     }
   },
-  "defaultProject": "expeditionsjournal-web"
+  "defaultProject": "monatsziele-web"
 }
