@@ -5,11 +5,12 @@ import { RECORDINGINITDATA } from './recording-initdata';
 export const GOALSINITDATA: Goal[] = [
     {
         id: '8cd8daf1-b7d2-4bef-9fb1-456f3c4f95f0',
-        name: 'Angular Lektionen lernen',
+        name: 'Angular Client-Deployment',
+        description: 'Web-App erfolgreich auf Azure ausrollen',
         targetAmount: 25,
-        currentAmount: 22,
-        currentPercentage: 0.88,
-        amountUnitOfMeasurement: 'Lektion',
+        currentAmount: 25,
+        currentPercentage: 1,
+        amountUnitOfMeasurement: 'Milestone',
         period: Period.Month
     },
     {
