@@ -1,4 +1,4 @@
-# Expeditionsjournal
+# Monatsziele
 First personal Angular evaluation project
 
 ## Subject
