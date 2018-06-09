@@ -1,0 +1,20 @@
+h2 {
+    text-align:center;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px gray;
+}
+
+.card-link {
+    color: #222;
+  }
+  
+  .card-body:hover {
+    color: black;
+    background-color: antiquewhite;
+  }
+
+.card.recording {
+    width: 20rem;
+    opacity: 0.93;
+
+}
