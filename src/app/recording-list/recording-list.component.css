@@ -3,3 +3,12 @@ h2 {
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 1px 1px gray;
 }
+
+.card-link {
+    color: #222;
+  }
+  
+  .card-body:hover {
+    color: black;
+    background-color: antiquewhite;
+  }
