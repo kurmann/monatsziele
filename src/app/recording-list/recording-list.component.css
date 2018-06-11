@@ -14,8 +14,8 @@ h2 {
     border: 1px solid lightgray;
   }
 
-  li:before {    
+  a:before {    
     font-family: 'FontAwesome';
     content: '\f00c';
-    margin:0 5px 0 -15px;
+    margin-left: 1rem;
     }
