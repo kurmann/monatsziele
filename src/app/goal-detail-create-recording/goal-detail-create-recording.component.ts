@@ -20,10 +20,10 @@ export class GoalDetailCreateRecordingComponent implements OnInit {
     const id = this._route.parent.snapshot.paramMap.get('id');
     this.goal = this._goalService.getGoal(id);
 
-    this.recording = this._getNewRecording();
+    this.recording = this._getEmptyRecording();
   }
 
-  private _getNewRecording(): Recording {
+  private _getEmptyRecording(): Recording {
     const recording = new Recording();
     recording.date = new Date();
     recording.amount = 1;
@@ -31,7 +31,7 @@ export class GoalDetailCreateRecordingComponent implements OnInit {
     return recording;
   }
 
-  onSubmitCreateRecording(form: NgForm) {
+  onCreateRecording(form: NgForm) {
     console.log(form.value);
   }
 

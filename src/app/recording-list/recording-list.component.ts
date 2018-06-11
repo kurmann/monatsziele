@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recording } from '../recording';
-import { Goal } from '../goal';
 
 @Component({
   selector: 'app-recording-list',

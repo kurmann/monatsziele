@@ -3,12 +3,14 @@
   <div class="card shadow bg-white rounded">
     <div class="card-header">Einträge</div>
     <div class="card-body">
-      <h5 class="card-title mb-3">Alle Einträge zum Monatsziel</h5>
-      <p class="card-text row" *ngFor="let recording of recordings">
-        <span class="col-md-3">{{recording.date | date:'yyyy-MM-dd'}}</span>
-        <span class="col-md-3">{{recording.amount}} {{amountUnitOfMeasurement}}</span>
-        <span class="col-lg-6 offset-md-3 offset-lg-0 font-weight-bold" *ngIf="recording.comment">{{recording.comment}}</span>
-      </p>
+        <h5 class="card-title mb-3">Alle Einträge zum Monatsziel</h5>
+        <p class="card-text row" *ngFor="let recording of recordings">
+          <a [routerLink]="['../recordings', recording.id]" class="card-link">
+            <span class="col-md-3">{{recording.date | date:'yyyy-MM-dd'}}</span>
+            <span class="col-md-3">{{recording.amount}} {{amountUnitOfMeasurement}}</span>
+            <span class="col-lg-6 offset-md-3 offset-lg-0 font-weight-bold" *ngIf="recording.comment">{{recording.comment}}</span>
+          </a>
+        </p>
     </div>
   </div>
 
