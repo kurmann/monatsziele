@@ -5,10 +5,11 @@
     <div class="card-body">
       <h5 class="card-title mb-3">Alle Einträge zum Monatsziel</h5>
       <div class="card-text">
+        <!-- https://stackoverflow.com/questions/12468359/using-font-awesome-icon-for-bullet-points-with-a-single-list-item-element -->
         <li class="row d-block recording" *ngFor="let recording of recordings">
           <a [routerLink]="['../recordings', recording.id]" class="card-link d-block py-2">
-            <span class="fa fa-check ml-3"></span>
-            <span class="col-md-3">{{recording.date | date:'yyyy-MM-dd'}}</span>
+            <span class="col-md-1 fa fa-check mr-0"></span>
+            <span class="col-md-3 ml-0">{{recording.date | date:'yyyy-MM-dd'}}</span>
             <span class="col-md-3">{{recording.amount}} {{amountUnitOfMeasurement}}</span>
             <span class="col-lg-6 offset-md-3 offset-lg-0 font-weight-bold" *ngIf="recording.comment">{{recording.comment}}</span>
           </a>
