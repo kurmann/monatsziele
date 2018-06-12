@@ -8,11 +8,14 @@ import { RECORDINGINITDATA } from '../recording-initdata';
 })
 export class RecordingService {
 
-  constructor() {}
+  constructor() { }
 
   getRecordings(): Observable<Recording[]> {
+    return Observable.create(RECORDINGINITDATA);
+  }
 
-  return Observable.create(RECORDINGINITDATA);
-
+  getRecording(id: string): Observable<Recording[]> {
+    let data = RECORDINGINITDATA.find(e => e.id === id);
+    return Observable.create(data);
   }
 }
