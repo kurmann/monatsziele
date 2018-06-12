@@ -11,6 +11,8 @@ export class RecordingListComponent implements OnInit {
   @Input() recordings: Recording[];
   @Input() amountUnitOfMeasurement: string;
 
+  fontAwesomeIcon = 'fa-check';
+
   constructor() { }
 
   ngOnInit() {

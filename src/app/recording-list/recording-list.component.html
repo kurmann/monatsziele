@@ -6,7 +6,7 @@
     <a class="list-group-item" *ngFor="let recording of recordings" [routerLink]="['/recordings', recording.id, 'detail']">
       <div class="row">
         <span class="col-md-3 ml-0">
-          <i class="fa fa-check fa-fw mr-2" aria-hidden="true"></i>{{recording.date | date:'yyyy-MM-dd'}}</span>
+          <i class="fa fa-fw mr-2" [ngClass]="['fa', 'fa-fw', fontAwesomeIcon, 'mr-2']" aria-hidden="true"></i>{{recording.date | date:'yyyy-MM-dd'}}</span>
         <span class="col-md-3">{{recording.amount}} {{amountUnitOfMeasurement}}</span>
         <span class="col-lg-6 offset-md-3 offset-lg-0 font-weight-bold" *ngIf="recording.comment">{{recording.comment}}</span>
       </div>
