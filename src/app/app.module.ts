@@ -46,7 +46,7 @@ import { RecordingDetailComponent } from './recording-detail/recording-detail.co
       },
       { path: 'goals/:id/update', component: GoalUpdateComponent },
       { path: 'goals/:id', redirectTo: 'goals/:id/detail', pathMatch: 'full' },
-      { path: 'goals/:id/recordings/:recordingId', component: RecordingDetailComponent },
+      { path: 'recordings/:recordingId', component: RecordingDetailComponent },
       { path: 'about', component: AboutComponent },
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },

@@ -3,7 +3,7 @@
   <h5 class="card-title mb-3">Alle Einträge zum Monatsziel</h5>
 
   <div class="list-group">
-    <a class="list-group-item" *ngFor="let recording of recordings" [routerLink]="['../recordings', recording.id]">
+    <a class="list-group-item" *ngFor="let recording of recordings" [routerLink]="['/recordings', recording.id]">
       <div class="row">
         <span class="col-md-3 ml-0">
           <i class="fa fa-check fa-fw mr-2" aria-hidden="true"></i>{{recording.date | date:'yyyy-MM-dd'}}</span>
