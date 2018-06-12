@@ -16,6 +16,9 @@ export class RecordingService {
 
   getRecording(id: string): Observable<Recording> {
     const data = RECORDINGINITDATA.find(e => e.id === id);
-    return Observable.create(data);
+    const obs = new Observable<Recording>(observer => {
+      observer.next(data);
+    });
+    return obs;
   }
 }
