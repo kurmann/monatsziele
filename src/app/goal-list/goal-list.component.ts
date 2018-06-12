@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
-import { Recording } from '../recording';
 
 @Component({
   templateUrl: './goal-list.component.html',
@@ -15,7 +14,6 @@ export class GoalListComponent implements OnInit {
 
   constructor(
     private goalService: GoalService,
-    private route: ActivatedRoute,
     private router: Router,
     private sanitizer: DomSanitizer
   ) {}
