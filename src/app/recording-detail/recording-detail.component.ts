@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-recording-detail',
   templateUrl: './recording-detail.component.html',
   styleUrls: ['./recording-detail.component.css']
 })
