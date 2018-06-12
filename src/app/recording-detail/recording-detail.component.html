@@ -18,13 +18,21 @@
           </dl>
         </div>
       </div>
+
+      <div class="card-body">
+        <dl class="row mb-0">
+          <dt *ngIf="recording.itemCreatedDate" class="col-md-3">Eintrag erfast am:</dt>
+          <dd *ngIf="recording.itemCreatedDate" class="col-md-9">{{recording.itemCreatedDate | date:'shortDate'}}</dd>
+        </dl>
+      </div>
     </a>
-    <div class="card-footer">
-      <dl class="row mb-0">
-        <dt *ngIf="recording.itemCreatedDate" class="col-md-3">Eintrag erfast am:</dt>
-        <dd *ngIf="recording.itemCreatedDate" class="col-md-9">{{recording.itemCreatedDate | date:'shortDate'}}</dd>
-      </dl>
+
+    <div class="card-footer pb-1">
+      <div class="d-print-none">
+        <button type="submit" class="btn btn-primary mb-2 mr-2" style="min-width: 9.3rem" (click)="onUpdateView()">Eintrag bearbeiten</button>
+        <button type="button" class="btn btn-outline-primary mb-2" style="min-width: 9.3rem" (click)="onBack()">Zurück</button>
+      </div>
     </div>
-    
+
   </div>
 </div>

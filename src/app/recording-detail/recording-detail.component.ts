@@ -19,11 +19,11 @@ export class RecordingDetailComponent implements OnInit {
     this._recordingService.getRecording(id).subscribe(recording => this.recording = recording);
   }
 
-  onUpdateRecording(form: NgForm) {
-    console.log(form.value);
+  onUpdateView(): void {
+    this._router.navigate(['recordings', this.recording.id, 'update']);
   }
 
-  onCancel(): void {
+  onBack(): void {
     this._router.navigate(['goals', this.recording.goalId, 'detail' ]);
   }
 
