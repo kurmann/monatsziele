@@ -1,34 +1,30 @@
 <div class="container">
   <div class="card">
-      <div class="card-header">Eintrag zum Monatsziel</div>
-      <a [routerLink]="['/goals', recording.goalId, 'detail']" class="card-link">
-    
-    
-    <div class="card-body">
-      
-        <dl class="row mb-0">
-          <dt class="col-md-3">Ziel</dt>
-          <dd class="col-md-9">
-            <h5 class="card-title">Zielname</h5>
-          </dd>
-        </dl>
+
+    <div class="card-header">Eintrag zum Monatsziel</div>
+    <a [routerLink]="['/goals', recording.goalId, 'detail']" class="card-link">
+
+      <div class="card-body">
         <div class="card-text">
           <dl class="row mb-0">
+            <dt class="col-md-3">Ziel</dt>
+            <dd class="col-md-9">Zielname</dd>
             <dt *ngIf="recording.date" class="col-md-3">Datum</dt>
             <dd *ngIf="recording.date" class="col-md-9">{{recording.date | date:'shortDate'}}</dd>
             <dt class="col-md-3">Messeinheit</dt>
-            <dd class="col-md-9 font-weight-bold">Platzhalter für Messeinheit</dd>
+            <dd class="col-md-9">Platzhalter für Messeinheit</dd>
             <dt *ngIf="recording.comment" class="col-md-3">Beschreibung</dt>
-            <dd *ngIf="recording.comment" class="col-md-9">{{recording.comment}}</dd>
+            <dd *ngIf="recording.comment" class="col-md-9 font-weight-bold">{{recording.comment}}</dd>
           </dl>
         </div>
-    </div>
-  </a>
+      </div>
+    </a>
     <div class="card-footer">
       <dl class="row mb-0">
         <dt *ngIf="recording.itemCreatedDate" class="col-md-3">Eintrag erfast am:</dt>
         <dd *ngIf="recording.itemCreatedDate" class="col-md-9">{{recording.itemCreatedDate | date:'shortDate'}}</dd>
       </dl>
     </div>
+    
   </div>
 </div>
