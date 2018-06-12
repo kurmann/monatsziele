@@ -3,7 +3,6 @@ import { GOALSINITDATA } from '../goal-initdata';
 import { Goal } from '../goal';
 import { BehaviorSubject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { Period } from '../period.enum';
 import { SearchService } from '../search-service/search.service';
 
 @Injectable({
