@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { RecordingService } from '../recording-service/recording.service';
-import { Recording } from 'src/app/recording';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RecordingService } from '../recording-service/recording.service';
 import { NgForm } from '@angular/forms';
+import { Recording } from 'src/app/recording';
 
 @Component({
-  templateUrl: './recording-detail.component.html',
-  styleUrls: ['./recording-detail.component.css']
+  templateUrl: './recording-update.component.html',
+  styleUrls: ['./recording-update.component.css']
 })
-export class RecordingDetailComponent implements OnInit {
+export class RecordingUpdateComponent implements OnInit {
 
   recording: Recording;
 

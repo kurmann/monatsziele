@@ -1,43 +1,34 @@
 <div class="container">
   <div class="card">
+      <div class="card-header">Eintrag zum Monatsziel</div>
+      <a [routerLink]="['/goals', recording.goalId, 'detail']" class="card-link">
+    
+    
     <div class="card-body">
-        <h4 class="card-title">Den Eintrag bearbeiten</h4>
-        <form #form="ngForm" (submit)="onUpdateRecording(form)">
-          
-            <div class="row mt-4">
-              <div class="col-lg">
-                <div class="form-group row">
-                  <label class="col-lg-6 col-form-label" for="recordingInputField">Datum</label>
-                  <div class="col-lg-6">
-                    <input type="date" class="form-control" id="recordingInputField" name="date" [(ngModel)]="recording.date">
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg">
-                <div class="form-group row">
-                  <label for="recordingAmountField" class="col-form-label col-lg-4 offset-lg-3">Platzhalter für Messeinheit</label>
-                  <div class="col-lg-5">
-                    <input type="number" class="form-control" id="recordingAmountField" name="amount" [(ngModel)]="recording.amount">
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-            <div class="form-group row">
-              <label for="commentInputField" class="col-lg-3 col-form-label">Beschreibung</label>
-              <div class="col-lg-9">
-                <input #comment="ngModel" [class.is-invalid]="comment.invalid && comment.dirty" type="text" class="form-control" id="commentInputField"
-                  name="comment" [(ngModel)]="recording.comment">
-                <div class="invalid-feedback">Bitte Kommentar abgeben</div>
-              </div>
-            </div>
-
-            <div class="d-print-none">
-                <button type="submit" style="min-width: 9.3rem" class="btn btn-primary mb-2 mr-2">Eintrag speichern</button>
-                <button type="button" class="btn btn-outline-primary mb-2" (click)="onCancel()">Abbrechen</button>
-              </div>
-          
-          </form>
+      
+        <dl class="row mb-0">
+          <dt class="col-md-3">Ziel</dt>
+          <dd class="col-md-9">
+            <h5 class="card-title">Zielname</h5>
+          </dd>
+        </dl>
+        <div class="card-text">
+          <dl class="row mb-0">
+            <dt *ngIf="recording.date" class="col-md-3">Datum</dt>
+            <dd *ngIf="recording.date" class="col-md-9">{{recording.date | date:'shortDate'}}</dd>
+            <dt class="col-md-3">Messeinheit</dt>
+            <dd class="col-md-9 font-weight-bold">Platzhalter für Messeinheit</dd>
+            <dt *ngIf="recording.comment" class="col-md-3">Beschreibung</dt>
+            <dd *ngIf="recording.comment" class="col-md-9">{{recording.comment}}</dd>
+          </dl>
+        </div>
+    </div>
+  </a>
+    <div class="card-footer">
+      <dl class="row mb-0">
+        <dt *ngIf="recording.itemCreatedDate" class="col-md-3">Eintrag erfast am:</dt>
+        <dd *ngIf="recording.itemCreatedDate" class="col-md-9">{{recording.itemCreatedDate | date:'shortDate'}}</dd>
+      </dl>
     </div>
   </div>
 </div>

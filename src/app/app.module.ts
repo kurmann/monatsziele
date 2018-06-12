@@ -15,6 +15,7 @@ import { RecordingListComponent } from './recording-list/recording-list.componen
 import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recording/goal-detail-create-recording.component';
 import { GoalDetailsButtonsComponent } from './goal-details-buttons/goal-details-buttons.component';
 import { RecordingDetailComponent } from './recording-detail/recording-detail.component';
+import { RecordingUpdateComponent } from './recording-update/recording-update.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RecordingDetailComponent } from './recording-detail/recording-detail.co
     RecordingListComponent,
     GoalDetailCreateRecordingComponent,
     GoalDetailsButtonsComponent,
-    RecordingDetailComponent
+    RecordingDetailComponent,
+    RecordingUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,9 @@ import { RecordingDetailComponent } from './recording-detail/recording-detail.co
       },
       { path: 'goals/:id/update', component: GoalUpdateComponent },
       { path: 'goals/:id', redirectTo: 'goals/:id/detail', pathMatch: 'full' },
-      { path: 'recordings/:id', component: RecordingDetailComponent },
+      { path: 'recordings/:id', redirectTo: 'recordings/:id/detail' },
+      { path: 'recordings/:id/detail', component: RecordingDetailComponent },
+      { path: 'recordings/:id/update', component: RecordingUpdateComponent },
       { path: 'about', component: AboutComponent },
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },
