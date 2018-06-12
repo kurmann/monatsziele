@@ -24,7 +24,7 @@ export class RecordingUpdateComponent implements OnInit {
   }
 
   onCancel(): void {
-    this._router.navigate(['goals', this.recording.goalId, 'detail' ]);
+    this._router.navigate(['recordings', this.recording.id, 'detail' ]);
   }
 
 }

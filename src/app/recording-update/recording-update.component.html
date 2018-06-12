@@ -1,5 +1,8 @@
 <div class="container">
   <div class="card">
+
+    <div class="card-header">Eintrag bearbeiten</div>
+
     <div class="card-body">
       <h4 class="card-title">Den Eintrag bearbeiten</h4>
       <form #form="ngForm" (submit)="onUpdateRecording(form)">
@@ -15,7 +18,7 @@
           </div>
           <div class="col-lg">
             <div class="form-group row">
-              <label for="recordingAmountField" class="col-form-label col-lg-4 offset-lg-3">Platzhalter für Messeinheit</label>
+              <label for="recordingAmountField" class="col-form-label col-lg-4 offset-lg-3">Messeinheit</label>
               <div class="col-lg-5">
                 <input type="number" class="form-control" id="recordingAmountField" name="amount" [(ngModel)]="recording.amount">
               </div>
@@ -32,12 +35,18 @@
           </div>
         </div>
 
-        <div class="d-print-none">
-          <button type="submit" style="min-width: 9.3rem" class="btn btn-primary mb-2 mr-2">Eintrag speichern</button>
-          <button type="button" class="btn btn-outline-primary mb-2" (click)="onCancel()">Abbrechen</button>
-        </div>
+
 
       </form>
     </div>
+
+    <div class="card-footer d-print-none">
+      <button type="submit" class="btn btn-primary mr-2">Speichern</button>
+      <button type="button" class="btn btn-outline-primary" (click)="onCancel()">Abbrechen</button>
+    </div>
+
   </div>
+
+
+
 </div>
