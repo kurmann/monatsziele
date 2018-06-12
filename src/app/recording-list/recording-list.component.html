@@ -1,17 +1,32 @@
 <div *ngIf='recordings' class="my-4">
 
+    <h5 class="card-title mb-3">Alle Einträge zum Monatsziel</h5>
+
+    <div class="list-group">
+      <a class="list-group-item" *ngFor="let recording of recordings" href="#"><i class="fa fa-home fa-fw mr-2" aria-hidden="true"></i>{{recording.comment}}</a>
+        <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+        <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+        <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+        <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+      </div>
+
   <div class="card shadow bg-white rounded">
     <div class="card-header">Einträge</div>
     <div class="card-body">
       <h5 class="card-title mb-3">Alle Einträge zum Monatsziel</h5>
       <div class="card-text">
-        <li class="row d-block recording" *ngFor="let recording of recordings">
-          <a [routerLink]="['../recordings', recording.id]" class="card-link d-block py-2">
-            <span class="col-md-3 ml-0">{{recording.date | date:'yyyy-MM-dd'}}</span>
-            <span class="col-md-3">{{recording.amount}} {{amountUnitOfMeasurement}}</span>
-            <span class="col-lg-6 offset-md-3 offset-lg-0 font-weight-bold" *ngIf="recording.comment">{{recording.comment}}</span>
-          </a>
-        </li>
+        <ul class="fa-ul">
+          <li *ngFor="let recording of recordings">
+              <i class="fa-fw fa fa-check d-inline-block"></i>
+            <a [routerLink]="['../recordings', recording.id]" class="card-link">
+              <div class="row d-block">
+                <span class="col-md-3 ml-0">{{recording.date | date:'yyyy-MM-dd'}}</span>
+                <span class="col-md-3">{{recording.amount}} {{amountUnitOfMeasurement}}</span>
+                <span class="col-lg-6 offset-md-3 offset-lg-0 font-weight-bold" *ngIf="recording.comment">{{recording.comment}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

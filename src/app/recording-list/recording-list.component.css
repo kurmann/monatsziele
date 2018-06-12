@@ -1,4 +1,4 @@
-h2 {
+h2, h3, h4, h5 {
     text-align:center;
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 1px 1px gray;
@@ -14,8 +14,9 @@ h2 {
     border: 1px solid lightgray;
   }
 
-  a:before {    
-    font-family: 'FontAwesome';
-    content: '\f00c';
-    margin-left: 1rem;
-    }
+.list-group-item {
+  color: black;
+}
+.list-group-item:hover {
+  background-color: antiquewhite;
+}
