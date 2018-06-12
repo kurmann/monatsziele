@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monatsziele.Api", "Monatsziele.Api\Monatsziele.Api.csproj", "{55042FFD-0EA5-42E3-87B9-5C7F269434BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monatsziele.Api", "Monatsziele.Api.csproj", "{55042FFD-0EA5-42E3-87B9-5C7F269434BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
