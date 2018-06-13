@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Monatsziele.Api.Controllers
 {
-    public class TablesController : ApiController
+    public class TablesController : Controller
     {
-        public IHttpActionResult CreateTable()
+        public void CreateTable()
         {
-            return View();
+            
         }
     }
 }
