@@ -2,13 +2,15 @@
 
 namespace Monatsziele.Api.Models
 {
-    public class Goal : TableEntity
+    public class GoalEntity : TableEntity
     {
-        public Goal(string username, string id) : base(username, id)
+        public GoalEntity(string username, string id) : base(username, id)
         {
             PartitionKey = username;
             RowKey = id;
         }
+
+        public GoalEntity() { }
 
         public string Name { get; set; }
     }
