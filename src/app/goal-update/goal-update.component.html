@@ -46,7 +46,7 @@
                 <input readonly="readonly" type="text" class="form-control" placeholder="Feuer unter dem Hintern" aria-label="Motivationsbild"
                   aria-describedby="basic-addon2" [value]="'Foto von ' + goal.imagePhotographerName">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">Bild auswählen</button>
+                  <button class="btn btn-outline-secondary" type="button" (click)="onChooseImage()">Bild auswählen</button>
                 </div>
               </div>
             </div>

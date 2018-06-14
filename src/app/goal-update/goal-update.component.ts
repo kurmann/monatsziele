@@ -30,4 +30,8 @@ export class GoalUpdateComponent implements OnInit {
   onCancelUpdate() {
     this.router.navigate(['/goals', this.goal.id, 'detail']);
   }
+
+  onChooseImage() {
+    this.router.navigate(['image'], {relativeTo: this.route});
+  }
 }

@@ -47,6 +47,7 @@ import { RecordingUpdateComponent } from './recording-update/recording-update.co
         ]
       },
       { path: 'goals/:id/update', component: GoalUpdateComponent },
+      { path: 'goals/:id/update/image', component: ImageListComponent },
       { path: 'goals/:id', redirectTo: 'goals/:id/detail', pathMatch: 'full' },
       { path: 'recordings/:id', redirectTo: 'recordings/:id/detail' },
       { path: 'recordings/:id/detail', component: RecordingDetailComponent },
