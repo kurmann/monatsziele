@@ -9,6 +9,7 @@ import { Goal } from '../goal';
   styleUrls: ['./goal-update.component.css']
 })
 export class GoalUpdateComponent implements OnInit {
+
   goal: Goal;
 
   constructor(

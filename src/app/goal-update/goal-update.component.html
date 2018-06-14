@@ -3,20 +3,20 @@
   <div class="card">
     <div class="card-header">{{goal.period}}</div>
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <div class="card-body">
           <div class="card-text">
 
             <div class="form-group row">
-              <label for="inputGoalName" class="col-lg-3 col-form-label">Name des Ziels</label>
-              <div class="col-lg-9">
+              <label for="inputGoalName" class="col-lg-3 col-form-label pr-0">Name des Ziels</label>
+              <div class="col-lg">
                 <input type="text" class="form-control" id="inputGoalName" placeholder="Zielname" [(ngModel)]="goal.name">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputGoalDescription" class="col-lg-3 col-form-label">Beschreibung</label>
-              <div class="col-lg-9">
+              <label for="inputGoalDescription" class="col-lg-3 col-form-label pr-0">Beschreibung</label>
+              <div class="col-lg">
                 <textarea class="form-control" id="inputGoalDescription" placeholder="Beschreibung" [(ngModel)]="goal.description"></textarea>
               </div>
             </div>
@@ -24,18 +24,29 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group row">
-                  <label for="inputGoalCurrentAmount" class="col-md-6 col-form-label">Startwert</label>
-                  <div class="col-md-6">
+                  <label for="inputGoalCurrentAmount" class="col-md col-form-label">Startwert</label>
+                  <div class="col-md">
                     <input type="text" class="form-control" id="inputGoalCurrentAmount" placeholder="Zielwert" [(ngModel)]="goal.currentAmount">
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6">
+              <div class="col-md-6">
                 <div class="form-group row">
-                  <label for="inputGoalTargetAmount" class="col-md-6 text-md-right col-form-label">Zielwert</label>
-                  <div class="col-md-6">
+                  <label for="inputGoalTargetAmount" class="col-md text-md-right col-form-label">Zielwert</label>
+                  <div class="col-md">
                     <input type="text" class="form-control" id="inputGoalTargetAmount" placeholder="Zielwert" [(ngModel)]="goal.targetAmount">
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Motivation</label>
+              <div class="input-group col-md mb-3">
+                <input readonly="readonly" type="text" class="form-control" placeholder="Feuer unter dem Hintern" aria-label="Motivationsbild"
+                  aria-describedby="basic-addon2" [value]="'Foto von ' + goal.imagePhotographerName">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">Bild auswählen</button>
                 </div>
               </div>
             </div>
@@ -45,10 +56,7 @@
       </div>
       <div class="col-lg">
         <div style="background-color: #020101">
-          <a href="https://unsplash.com/photos/D7y_ylit0Tw">
-            <img src="https://images.unsplash.com/photo-1517482359597-b3f5ba0d52ce?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&h=320&fit=crop&ixid=eyJhcHBfaWQiOjI3OTM2fQ&s=5abc0e06f387240a4ec1e0c5f2f216a6"
-              class="img-fluid float-lg-right mx-auto d-block" alt="Responsive image">
-          </a>
+          <img [src]="goal.imageUrl" class="img-fluid float-lg-right mx-auto d-block" alt="Responsive image">
         </div>
       </div>
     </div>

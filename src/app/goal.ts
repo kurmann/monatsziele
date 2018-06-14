@@ -11,4 +11,7 @@ export class Goal {
     amountUnitOfMeasurement?: string;
     currentPercentage?: number;
     recordings?: Recording[];
+    imageUrl?: string;
+    imageSourceUrl?: string;
+    imagePhotographerName?: string;
 }
