@@ -8,8 +8,8 @@
         <div class="card-body">
 
           <dl class="row mb-0">
-            <dt class="col-md-3">Ziel</dt>
-            <dd class="col-md-9">
+            <dt class="col-sm-3">Ziel:</dt>
+            <dd class="col-sm-9">
               <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
             </dd>
           </dl>
@@ -17,10 +17,10 @@
             <dl class="row mb-0">
               <dt *ngIf="goal.description" class="col-md-3">Beschreibung:</dt>
               <dd *ngIf="goal.description" class="col-md-9">{{goal.description}}</dd>
-              <dt *ngIf="goal.currentAmount" class="col-md-3">Aktueller Wert:</dt>
-              <dd *ngIf="goal.currentAmount" class="col-md-9 font-weight-bold">{{goal.currentAmount}}</dd>
-              <dt *ngIf="goal.targetAmount" class="col-md-3">Zielwert:</dt>
-              <dd *ngIf="goal.targetAmount" class="col-md-9">{{goal.targetAmount}}</dd>
+              <dt *ngIf="goal.currentAmount" class="col-sm-3">Aktuell:</dt>
+              <dd *ngIf="goal.currentAmount" class="col-sm-9 font-weight-bold">{{goal.currentAmount}}</dd>
+              <dt *ngIf="goal.targetAmount" class="col-sm-3">Zielwert:</dt>
+              <dd *ngIf="goal.targetAmount" class="col-sm-9">{{goal.targetAmount}}</dd>
             </dl>
           </div>
         </div>
