@@ -3,28 +3,29 @@
   <div class="card shadow bg-white rounded">
     <div class="card-header">Monatsziel</div>
     <div class="row">
-      <div class="col-lg-7">
+
+      <a [routerLink]="['/goals']" class="card-link col-lg-7">
         <div class="card-body">
-          <a [routerLink]="['/goals']" class="card-link">
+
+          <dl class="row mb-0">
+            <dt class="col-md-3">Ziel</dt>
+            <dd class="col-md-9">
+              <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
+            </dd>
+          </dl>
+          <div class="card-text">
             <dl class="row mb-0">
-              <dt class="col-md-3">Ziel</dt>
-              <dd class="col-md-9">
-                <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
-              </dd>
+              <dt *ngIf="goal.description" class="col-md-3">Beschreibung:</dt>
+              <dd *ngIf="goal.description" class="col-md-9">{{goal.description}}</dd>
+              <dt *ngIf="goal.currentAmount" class="col-md-3">Aktueller Wert:</dt>
+              <dd *ngIf="goal.currentAmount" class="col-md-9 font-weight-bold">{{goal.currentAmount}}</dd>
+              <dt *ngIf="goal.targetAmount" class="col-md-3">Zielwert:</dt>
+              <dd *ngIf="goal.targetAmount" class="col-md-9">{{goal.targetAmount}}</dd>
             </dl>
-            <div class="card-text">
-              <dl class="row mb-0">
-                <dt *ngIf="goal.description" class="col-md-3">Beschreibung:</dt>
-                <dd *ngIf="goal.description" class="col-md-9">{{goal.description}}</dd>
-                <dt *ngIf="goal.currentAmount" class="col-md-3">Aktueller Wert:</dt>
-                <dd *ngIf="goal.currentAmount" class="col-md-9 font-weight-bold">{{goal.currentAmount}}</dd>
-                <dt *ngIf="goal.targetAmount" class="col-md-3">Zielwert:</dt>
-                <dd *ngIf="goal.targetAmount" class="col-md-9">{{goal.targetAmount}}</dd>
-              </dl>
-            </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
+
       <div class="col-lg">
         <div style="background-color: #020101">
           <a href="https://unsplash.com/photos/D7y_ylit0Tw">
