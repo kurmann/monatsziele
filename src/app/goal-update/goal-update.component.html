@@ -7,29 +7,34 @@
 
         <div class="form-group row">
           <label for="inputGoalName" class="col-lg-2 col-form-label">Name des Ziels</label>
-          <div class="col-lg-5">
+          <div class="col-lg-6">
             <input type="text" class="form-control" id="inputGoalName" placeholder="Zielname" [(ngModel)]="goal.name">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="inputGoalDescription" class="col-lg-2 col-form-label">Beschreibung</label>
-          <div class="col-lg-5">
+          <div class="col-lg-6">
             <textarea class="form-control" id="inputGoalDescription" placeholder="Beschreibung" [(ngModel)]="goal.description"></textarea>
           </div>
         </div>
 
-        <div class="form-group row">
-          <label for="inputGoalTargetAmount" class="col-lg-2 col-form-label">Zielwert</label>
-          <div class="col-lg-2">
-            <input type="text" class="form-control" id="inputGoalTargetAmount" placeholder="Zielwert" [(ngModel)]="goal.targetAmount">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group row">
+              <label for="inputGoalCurrentAmount" class="col-lg-6 col-form-label">Aktueller Wert</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" id="inputGoalCurrentAmount" placeholder="Zielwert" [(ngModel)]="goal.currentAmount">
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputGoalCurrentAmount" class="col-lg-2 col-form-label">Aktueller Wert</label>
-          <div class="col-lg-2">
-            <input type="text" class="form-control" id="inputGoalCurrentAmount" placeholder="Zielwert" [(ngModel)]="goal.currentAmount">
+          <div class="col-lg-4">
+            <div class="form-group row">
+              <label for="inputGoalTargetAmount" class="col-lg-5 offset-lg-1 col-form-label">Zielwert</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" id="inputGoalTargetAmount" placeholder="Zielwert" [(ngModel)]="goal.targetAmount">
+              </div>
+            </div>
           </div>
         </div>
 
