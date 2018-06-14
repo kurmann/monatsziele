@@ -1,27 +1,40 @@
 <div class="container">
 
   <div class="card shadow bg-white rounded">
-    <a [routerLink]="['/goals']" class="card-link">
-      <div class="card-header">Monatsziel</div>
-      <div class="card-body">
-        <dl class="row mb-0">
-          <dt class="col-md-3">Ziel</dt>
-          <dd class="col-md-9">
-            <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
-          </dd>
-        </dl>
-        <div class="card-text">
-          <dl class="row mb-0">
-            <dt *ngIf="goal.description" class="col-md-3">Beschreibung:</dt>
-            <dd *ngIf="goal.description" class="col-md-9">{{goal.description}}</dd>
-            <dt *ngIf="goal.currentAmount" class="col-md-3">Aktueller Wert:</dt>
-            <dd *ngIf="goal.currentAmount" class="col-md-9 font-weight-bold">{{goal.currentAmount}}</dd>
-            <dt *ngIf="goal.targetAmount" class="col-md-3">Zielwert:</dt>
-            <dd *ngIf="goal.targetAmount" class="col-md-9">{{goal.targetAmount}}</dd>
-          </dl>
+    <div class="card-header">Monatsziel</div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card-body">
+          <a [routerLink]="['/goals']" class="card-link">
+            <dl class="row mb-0">
+              <dt class="col-md-3">Ziel</dt>
+              <dd class="col-md-9">
+                <h5 class="card-title" *ngIf="goal.name">{{goal.name}}</h5>
+              </dd>
+            </dl>
+            <div class="card-text">
+              <dl class="row mb-0">
+                <dt *ngIf="goal.description" class="col-md-3">Beschreibung:</dt>
+                <dd *ngIf="goal.description" class="col-md-9">{{goal.description}}</dd>
+                <dt *ngIf="goal.currentAmount" class="col-md-3">Aktueller Wert:</dt>
+                <dd *ngIf="goal.currentAmount" class="col-md-9 font-weight-bold">{{goal.currentAmount}}</dd>
+                <dt *ngIf="goal.targetAmount" class="col-md-3">Zielwert:</dt>
+                <dd *ngIf="goal.targetAmount" class="col-md-9">{{goal.targetAmount}}</dd>
+              </dl>
+            </div>
+          </a>
         </div>
       </div>
-    </a>
+      <div class="col-lg">
+        <div style="background-color: #020101">
+          <a href="https://unsplash.com/photos/D7y_ylit0Tw">
+            <img src="https://images.unsplash.com/photo-1517482359597-b3f5ba0d52ce?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&h=320&fit=crop&ixid=eyJhcHBfaWQiOjI3OTM2fQ&s=5abc0e06f387240a4ec1e0c5f2f216a6"
+              class="img-fluid float-lg-right mx-auto d-block" alt="Responsive image">
+          </a>
+        </div>
+      </div>
+    </div>
+
 
     <div class="card-footer d-print-none pb-1">
       <router-outlet></router-outlet>
