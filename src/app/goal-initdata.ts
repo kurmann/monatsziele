@@ -25,7 +25,8 @@ export const GOALSINITDATA: Goal[] = [
         recordings: RECORDINGINITDATA,
         imageUrl: 'https://images.unsplash.com/photo-1517482359597-b3f5ba0d52ce?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&h=320&fit=crop&ixid=eyJhcHBfaWQiOjI3OTM2fQ&s=5abc0e06f387240a4ec1e0c5f2f216a6',
         imageSourceUrl: 'https://unsplash.com/photos/_IkrjJCO3gs',
-        imagePhotographerName: 'Dylon Nolte'
+        imagePhotographerName: 'Dylon Nolte',
+        imageColor: '#020101'
     },
     {
         id: '0608728b-ce36-4083-8e86-d03113ad74fb',

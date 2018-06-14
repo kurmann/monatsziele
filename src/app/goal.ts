@@ -14,4 +14,5 @@ export class Goal {
     imageUrl?: string;
     imageSourceUrl?: string;
     imagePhotographerName?: string;
+    imageColor?: string;
 }

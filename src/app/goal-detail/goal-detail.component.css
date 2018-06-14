@@ -18,3 +18,19 @@ h2 {
     opacity: 0.93;
 
 }
+
+.goal-image-link-area {
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0rem;
+    right: 0.8rem;
+    color: whitesmoke;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+    text-shadow: 1px 1px 1px black;
+}
+
+.goal-image-link-area a {
+    text-decoration: underline;
+    color: white;
+}
