@@ -9,9 +9,9 @@
           <div class="col-md-10 col-sm-9">
             <div class="input-group">
               <input #inputSearchImages id="inputSearchImages" type="text" class="form-control" placeholder="Suchbegriff" aria-label="Suchbegriff"
-                aria-describedby="basic-addon2" (keyup.enter)="onSearchImages(inputSearchImages.value)">
+                aria-describedby="basic-addon2" (keyup)="onSearchImagesByInstantSearch(inputSearchImages.value)">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button" (click)="onSearchImages(inputSearchImages.value)">Suchen</button>
+                <button class="btn btn-primary" type="button" (click)="onSearchImagesByButton(inputSearchImages.value)">Suchen</button>
               </div>
             </div>
           </div>

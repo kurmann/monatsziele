@@ -23,7 +23,15 @@ export class ImageListComponent implements OnInit {
       });
   }
 
-  onSearchImages(searchString: string): void {
+  onSearchImagesByInstantSearch(searchString: string): void {
+    this._imageService.getImagesBySearchTerm(searchString)
+      .pipe(debounceTime(300))
+      .subscribe(result => {
+        this.images = result.results;
+      });
+  }
+
+  onSearchImagesByButton(searchString: string): void {
     this._imageService.getImagesBySearchTerm(searchString)
       .subscribe(result => {
         this.images = result.results;
