@@ -1,9 +1,9 @@
 export interface UnsplashResult {
     total: number;
     total_pages: number;
-    results?: (ResultsEntity)[] | null;
+    results?: (UnsplashImage)[] | null;
 }
-export interface ResultsEntity {
+export interface UnsplashImage {
     id: string;
     created_at: string;
     updated_at: string;
