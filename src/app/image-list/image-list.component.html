@@ -1,13 +1,33 @@
-<div *ngIf="images" class="container">
-  <h2>Bildersuche</h2>
+<div class="container">
 
-  <div class="card mr-3 mb-3 d-inline-block" *ngFor="let image of images">
-    <img class="card-img-top" [src]='image.urls.thumb' alt="Card image cap">
-    <div class="card-footer">
-      Von
-      <i>
-        <a [href]='image.links.html'>{{image.user.name}}</a>
-      </i>
+  <div class="row justify-content-center mb-3">
+    <div class="card" style="min-width: 40rem">
+      <div class="card-header">Foto suchen</div>
+      <div class="card-body">
+        <div class="card-text">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Suchbegriff" aria-label="Suchbegriff" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Suchen</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="images" class="card-columns">
+    <div class="card mr-3 mb-3 d-inline-block" *ngFor="let image of images">
+      <img class="card-img-top" [src]='image.urls.small' alt="Card image cap">
+      <div class="card-footer">
+        Von
+        <i>
+          <a [href]='image.links.html'>{{image.user.name}}</a>
+        </i>
+      </div>
     </div>
   </div>
 
