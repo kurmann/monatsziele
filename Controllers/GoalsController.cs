@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
@@ -12,19 +13,22 @@ namespace Monatsziele.Api.Controllers
     public class GoalsController : Controller
     {
         private IConfiguration Configuration { get; }
+        private IMapper Mapper { get; }
 
-        public GoalsController(IConfiguration configuration)
+        public GoalsController(IConfiguration configuration, IMapper mapper)
         {
             Configuration = configuration;
+            Mapper = mapper;
         }
 
         protected const string TableStorageConnectionStringName = "monatsziele_AzureStorageConnectionString";
 
         [HttpGet]
-        public List<GoalEntity> GetGoals()
+        public Goal[] GetGoals()
         {
             var goalEntities = GetGoalsEntities().Result;
-            return goalEntities;
+            var goals = Mapper.Map<Goal[]>(goalEntities);
+            return goals;
         }
 
         private async Task<List<GoalEntity>> GetGoalsEntities()

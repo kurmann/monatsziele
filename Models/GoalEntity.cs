@@ -13,5 +13,7 @@ namespace Monatsziele.Api.Models
         public GoalEntity() { }
 
         public string Name { get; set; }
+
+        public string Description { get; set; }
     }
 }
