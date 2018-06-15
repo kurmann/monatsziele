@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using Monatsziele.Api.Models;
@@ -10,6 +11,15 @@ namespace Monatsziele.Api.Controllers
     [Route("[controller]")]
     public class GoalsController : Controller
     {
+        private IConfiguration Configuration { get; }
+
+        public GoalsController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        protected const string TableStorageConnectionStringName = "monatsziele_AzureStorageConnectionString";
+
         [HttpGet]
         public List<GoalEntity> GetGoals()
         {
@@ -17,7 +27,7 @@ namespace Monatsziele.Api.Controllers
             return goalEntities;
         }
 
-        private static async Task<List<GoalEntity>> GetGoalsEntities()
+        private async Task<List<GoalEntity>> GetGoalsEntities()
         {
             var goalsTable = await GetTable("Goals");
             var continuationToken = default(TableContinuationToken);
@@ -36,14 +46,19 @@ namespace Monatsziele.Api.Controllers
             return goals;
         }
 
-        private static async Task<CloudTable> GetTable(string tableName)
+        private async Task<CloudTable> GetTable(string tableName)
         {
+            // get config
+            var connectionString = Configuration.GetConnectionString("monatsziele_AzureStorageConnectionString");
+            var storageAccount = CloudStorageAccount.Parse(connectionString);
+
             // table storage client
-            var tableCloudStorageAccount = CloudStorageAccount.Parse("monatsziele");
-            var tableClient = tableCloudStorageAccount.CreateCloudTableClient();
+            var tableClient = storageAccount.CreateCloudTableClient();
 
             // get table
             var tableReference = tableClient.GetTableReference(tableName);
+
+            // create if not exists
             await tableReference.CreateIfNotExistsAsync();
 
             return tableReference;
