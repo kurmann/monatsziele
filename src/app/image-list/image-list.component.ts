@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image-service/image.service';
 import { debounceTime } from 'rxjs/operators';
 import { UnsplashImage } from '../image-service/UnsplashResult';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,10 @@ export class ImageListComponent implements OnInit {
 
   public images: UnsplashImage[];
 
-  constructor(private _imageService: ImageService) { }
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _imageService: ImageService) { }
 
   ngOnInit() {
     this._imageService.getImagesBySearchTerm(this.defaultSearchTerm)
@@ -36,6 +40,10 @@ export class ImageListComponent implements OnInit {
       .subscribe(result => {
         this.images = result.results;
       });
+  }
+
+  onCancel() {
+    this._router.navigate(['../'], { relativeTo: this._route });
   }
 
 }
