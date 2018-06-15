@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { debounceTime } from 'rxjs/operators';
-import { Subject, Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { SearchService } from '../search-service/search.service';
 
 @Component({
@@ -11,8 +9,6 @@ import { SearchService } from '../search-service/search.service';
 export class HeaderComponent {
 
   title = 'Monatsziele';
-
-  private _searchStrings = new Subject<string>();
 
   constructor(private _searchService: SearchService) { }
 
