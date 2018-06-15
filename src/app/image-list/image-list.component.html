@@ -7,9 +7,10 @@
         <div class="card-text">
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Suchbegriff" aria-label="Suchbegriff" aria-describedby="basic-addon2">
+              <input #inputSearchImages id="inputSearchImages" type="text" class="form-control" placeholder="Suchbegriff" aria-label="Suchbegriff"
+                aria-describedby="basic-addon2" (keyup)="onSearchImages(inputSearchImages.value)">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button">Suchen</button>
+                <button class="btn btn-primary" type="button" (click)="onSearchImages(inputSearchImages.value)">Suchen</button>
               </div>
             </div>
           </div>

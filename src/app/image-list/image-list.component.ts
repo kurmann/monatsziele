@@ -17,4 +17,8 @@ export class ImageListComponent implements OnInit {
     });
   }
 
+  onSearchImages(searchString: string): void {
+    console.log('Search for:', searchString);
+  }
+
 }
