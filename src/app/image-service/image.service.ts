@@ -28,6 +28,8 @@ export class ImageService {
     const url = environment.connections.unsplash.url +
     '/search/photos' +
     '?query=' + searchTerm +
+    '&per_page=' + 24 +
+    '&orientation=' + 'landscape' +
     '&client_id=' +
     environment.connections.unsplash.clientId;
 
