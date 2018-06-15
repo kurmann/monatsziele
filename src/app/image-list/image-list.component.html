@@ -1,11 +1,12 @@
 <div class="container">
 
-  <div class="row justify-content-center mb-3">
-    <div class="card" style="min-width: 40rem">
-      <div class="card-header">Foto suchen</div>
-      <div class="card-body">
-        <div class="card-text">
-          <div class="form-group">
+  <div class="card mb-4">
+    <div class="card-header">Foto suchen</div>
+    <div class="card-body">
+      <div class="card-text">
+        <div class="form-group row">
+          <label for="inputSearchImages" class="col-md-2 col-sm-3 col-form-label">Fotosuche</label>
+          <div class="col-md-10 col-sm-9">
             <div class="input-group">
               <input #inputSearchImages id="inputSearchImages" type="text" class="form-control" placeholder="Suchbegriff" aria-label="Suchbegriff"
                 aria-describedby="basic-addon2" (keyup.enter)="onSearchImages(inputSearchImages.value)">
@@ -17,7 +18,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <div *ngIf="images" class="card-columns">
