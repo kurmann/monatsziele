@@ -25,11 +25,11 @@
   <div *ngIf="images" class="card-columns">
     <div class="card mr-3 mb-3 d-inline-block" *ngFor="let image of images">
       <img class="card-img-top" [src]='image.urls.small' alt="Card image cap">
+      <div class="goal-image-link-area">Foto von
+          <a [href]="image.links.html">{{image.user.name}}</a>
+        </div>
       <div class="card-footer">
-        Von
-        <i>
-          <a [href]='image.links.html'>{{image.user.name}}</a>
-        </i>
+          <button class="btn btn-outline-primary" type="button">Auswählen</button>
       </div>
     </div>
   </div>
