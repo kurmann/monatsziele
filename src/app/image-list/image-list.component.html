@@ -20,6 +20,8 @@
     </div>
   </div>
 
+  <h3 *ngIf="inputSearchImages.value">Fotobegriff: {{inputSearchImages.value}}</h3>
+
   <div *ngIf="images" class="card-columns">
     <div class="card mr-3 mb-3 d-inline-block" *ngFor="let image of images">
       <img class="card-img-top" [src]='image.urls.small' alt="Card image cap">

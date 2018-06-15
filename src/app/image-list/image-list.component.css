@@ -3,3 +3,21 @@ h3 {
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 1px 1px gray;
 }
+
+@media (min-width: 400px) {
+    .card-columns {
+      column-count: 1;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card-columns {
+      column-count: 2;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card-columns {
+      column-count: 3;
+    }
+  }

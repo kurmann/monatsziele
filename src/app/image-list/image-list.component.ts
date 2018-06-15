@@ -10,13 +10,17 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ImageListComponent implements OnInit {
 
+  public readonly defaultSearchTerm = 'Motivation';
+
   public images: UnsplashImage[];
+
   constructor(private _imageService: ImageService) { }
 
   ngOnInit() {
-    this._imageService.getCurrentImages().subscribe(images => {
-      this.images = images;
-    });
+    this._imageService.getImagesBySearchTerm(this.defaultSearchTerm)
+      .subscribe(result => {
+        this.images = result.results;
+      });
   }
 
   onSearchImages(searchString: string): void {
