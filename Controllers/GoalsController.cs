@@ -7,11 +7,10 @@ using Monatsziele.Api.Models;
 
 namespace Monatsziele.Api.Controllers
 {
-    [Route("api/[controller]")]
-    public class TablesController : Controller
+    [Route("[controller]")]
+    public class GoalsController : Controller
     {
         [HttpGet]
-        // api/goals
         public List<GoalEntity> GetGoals()
         {
             var goalEntities = GetGoalsEntities().Result;
