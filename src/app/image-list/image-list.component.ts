@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image-service/image.service';
-import { UnsplashImage } from '../image-service/UnsplashImage';
 import { debounceTime } from 'rxjs/operators';
+import { UnsplashImage } from '../image-service/UnsplashResult';
 
 
 @Component({

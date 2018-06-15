@@ -26,12 +26,12 @@
     <div class="card mr-3 mb-3 d-inline-block" *ngFor="let image of images">
       <img class="card-img-top" [src]='image.urls.small' alt="Card image cap">
       <div class="goal-image-link-area">Foto von
-          <a [href]="image.links.html">{{image.user.name}}</a>
-        </div>
-      <div class="card-footer">
-          <button class="btn btn-outline-primary" type="button">Auswählen</button>
+        <a [href]="image.links.html">{{image.user.name}}</a>
+      </div>
+      <div class="card-footer pr-3">
+        <button class="btn btn-outline-primary" type="button">Auswählen</button>
+        <img style="height: 40px;" [src]="image.user.profile_image.medium" class="rounded img-fluid float-right shadow">
       </div>
     </div>
   </div>
-
 </div>
