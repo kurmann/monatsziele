@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RecordingService } from '../recording-service/recording.service';
 import { Recording } from 'src/app/recording';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './recording-detail.component.html',
@@ -24,7 +23,7 @@ export class RecordingDetailComponent implements OnInit {
   }
 
   onBack(): void {
-    this._router.navigate(['goals', this.recording.goalId, 'detail' ]);
+    this._router.navigate(['goals', this.recording.goalId, 'detail']);
   }
 
 }

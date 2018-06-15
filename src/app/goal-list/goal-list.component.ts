@@ -16,7 +16,7 @@ export class GoalListComponent implements OnInit {
     private goalService: GoalService,
     private router: Router,
     private sanitizer: DomSanitizer
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.goalService.goals.subscribe(goals => this.goals = goals);

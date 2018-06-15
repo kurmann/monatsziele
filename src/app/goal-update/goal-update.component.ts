@@ -16,7 +16,7 @@ export class GoalUpdateComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private goalService: GoalService
-  ) {}
+  ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -32,6 +32,6 @@ export class GoalUpdateComponent implements OnInit {
   }
 
   onChooseImage() {
-    this.router.navigate(['image'], {relativeTo: this.route});
+    this.router.navigate(['image'], { relativeTo: this.route });
   }
 }

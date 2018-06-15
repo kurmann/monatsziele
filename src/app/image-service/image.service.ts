@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 export class ImageService {
   _unsplashConnection: any;
 
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient) { }
 
   getImages(): Observable<UnsplashImage[]> {
 
