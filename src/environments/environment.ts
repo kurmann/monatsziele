@@ -8,6 +8,9 @@ export const environment = {
     unsplash: {
       url: 'https://api.unsplash.com/',
       clientId: '9519e822930516201ca184e166266cc3c7afbc69ed629ad107e20f2448dcb7bc'
+    },
+    monatsziele: {
+      url: 'http://localhost:58894/'
     }
   }
 };
