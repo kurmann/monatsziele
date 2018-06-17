@@ -39,8 +39,9 @@ namespace Monatsziele.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
             app.UseCors("AllAllowedPolicy");
+            app.UseMvc();
+
         }
     }
 }
