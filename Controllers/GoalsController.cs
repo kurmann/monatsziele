@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -24,16 +25,31 @@ namespace Monatsziele.Api.Controllers
         protected const string TableStorageConnectionStringName = "monatsziele_AzureStorageConnectionString";
 
         [HttpGet]
-        public Goal[] GetGoals()
+        public Goal[] Get()
         {
             var goalEntities = GetGoalsEntities().Result;
             var goals = Mapper.Map<Goal[]>(goalEntities);
             return goals;
         }
 
+        [HttpGet("{id}")]
+        public Goal[] Get(Guid id)
+        {
+            var goalEntity = GetGoalEntity(id);
+            return null;
+        }
+
+        private async Task<TableResult> GetGoalEntity(Guid id)
+        {
+            var cloudTable = await GetTable("Goals");
+            var tableOperation = TableOperation.Retrieve<GoalEntity>("kurmannwillisau@me.com", id.ToString());
+
+            return cloudTable.ExecuteAsync(tableOperation)?.Result;
+        }
+
         private async Task<List<GoalEntity>> GetGoalsEntities()
         {
-            var goalsTable = await GetTable("Goals");
+            var cloudTable = await GetTable("Goals");
             var continuationToken = default(TableContinuationToken);
             var goals = new List<GoalEntity>();
 
@@ -42,7 +58,7 @@ namespace Monatsziele.Api.Controllers
 
             do
             {
-                var tableQuerySegment = await goalsTable.ExecuteQuerySegmentedAsync(query, continuationToken);
+                var tableQuerySegment = await cloudTable.ExecuteQuerySegmentedAsync(query, continuationToken);
                 continuationToken = tableQuerySegment.ContinuationToken;
                 goals.AddRange(tableQuerySegment.Results);
             } while (continuationToken != null);
