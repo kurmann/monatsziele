@@ -19,7 +19,7 @@ export class GoalListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.goalService.goals.subscribe(goals => this.goals = goals);
+    this.goalService.getGoalsAsync().subscribe(goals => this.goals = goals);
   }
 
   getWidthStylePercentageValue(percentageNumber: number): SafeStyle {
