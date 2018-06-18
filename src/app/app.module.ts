@@ -38,26 +38,6 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'goals', component: GoalListComponent },
-      {
-        path: 'goals/:id/detail', component: GoalDetailComponent,
-        children: [
-          { path: '', component: GoalDetailsButtonsComponent },
-          { path: 'create-recording', component: GoalDetailCreateRecordingComponent }
-        ]
-      },
-      { path: 'goals/:id/update', component: GoalUpdateComponent },
-      { path: 'goals/:id/update/image', component: ImageListComponent },
-      { path: 'goals/:id', redirectTo: 'goals/:id/detail', pathMatch: 'full' },
-      { path: 'recordings/:id', redirectTo: 'recordings/:id/detail' },
-      { path: 'recordings/:id/detail', component: RecordingDetailComponent },
-      { path: 'recordings/:id/update', component: RecordingUpdateComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
-      { path: '', redirectTo: 'goals', pathMatch: 'full' },
-      { path: '**', redirectTo: 'goals', pathMatch: 'full' },
-    ]),
     AppRoutingModule
   ],
   providers: [],
