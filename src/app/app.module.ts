@@ -16,6 +16,7 @@ import { GoalDetailCreateRecordingComponent } from './goal-detail-create-recordi
 import { GoalDetailsButtonsComponent } from './goal-details-buttons/goal-details-buttons.component';
 import { RecordingDetailComponent } from './recording-detail/recording-detail.component';
 import { RecordingUpdateComponent } from './recording-update/recording-update.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RecordingUpdateComponent } from './recording-update/recording-update.co
       { path: 'home', redirectTo: 'goals', pathMatch: 'full' },
       { path: '', redirectTo: 'goals', pathMatch: 'full' },
       { path: '**', redirectTo: 'goals', pathMatch: 'full' },
-    ])
+    ]),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
