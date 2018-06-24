@@ -6,7 +6,6 @@ using Monatsziele.Repository;
 
 namespace Monatsziele.Api.Controllers
 {
-    [Produces("application/xml")]
     [Route("[controller]")]
     public class GoalsController : Controller
     {
