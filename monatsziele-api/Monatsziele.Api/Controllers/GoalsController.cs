@@ -28,6 +28,8 @@ namespace Monatsziele.Api.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         public ActionResult Get(Guid id)
         {
             var tableResult = _repository.GetGoalEntity(id);
