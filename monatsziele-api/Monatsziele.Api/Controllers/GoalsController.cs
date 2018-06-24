@@ -6,11 +6,12 @@ using Monatsziele.Repository;
 
 namespace Monatsziele.Api.Controllers
 {
+    [Produces("application/xml")]
     [Route("[controller]")]
     public class GoalsController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly GoalRepository _repository;
+        private readonly IGoalRepository _repository;
 
         public GoalsController(RepositoryConfig configuration, IMapper mapper)
         {
@@ -27,10 +28,11 @@ namespace Monatsziele.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public Goal[] Get(Guid id)
+        public Goal Get(Guid id)
         {
-            var goalEntity = _repository.GetGoalEntity(id);
-            return null;
+            var goalEntity = _repository.GetGoalEntity(id).Result;
+            var goal = _mapper.Map<Goal>(goalEntity);
+            return goal;
         }
     }
 }
