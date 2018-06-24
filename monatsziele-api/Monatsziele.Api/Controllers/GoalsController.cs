@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Monatsziele.Api.Models;
@@ -27,11 +28,20 @@ namespace Monatsziele.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public Goal Get(Guid id)
+        public ActionResult Get(Guid id)
         {
-            var goalEntity = _repository.GetGoalEntity(id).Result;
-            var goal = _mapper.Map<Goal>(goalEntity);
-            return goal;
+            var tableResult = _repository.GetGoalEntity(id);
+            var entityResult = tableResult.Result;
+            switch (entityResult.HttpStatusCode)
+            {
+                case 404:
+                    return NotFound();
+                case 200:
+                    var goalEntity = entityResult.Result;
+                    var goal = _mapper.Map<Goal>(goalEntity);
+                    return Ok(goal);
+            }
+            return new StatusCodeResult(500);
         }
     }
 }
