@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using Monatsziele.Api.Models;
+using Monatsziele.Repository;
 
 namespace Monatsziele.Api.Controllers
 {
     [Route("[controller]")]
     public class GoalsController : Controller
     {
-        private IConfiguration Configuration { get; }
-        private IMapper Mapper { get; }
+        private readonly RepositoryConfig _configuration;
+        private readonly IMapper _mapper;
 
-        public GoalsController(IConfiguration configuration, IMapper mapper)
+        public GoalsController(RepositoryConfig configuration, IMapper mapper)
         {
-            Configuration = configuration;
-            Mapper = mapper;
+            _configuration = configuration;
+            _mapper = mapper;
         }
 
         protected const string TableStorageConnectionStringName = "monatsziele_AzureStorageConnectionString";
@@ -28,7 +28,7 @@ namespace Monatsziele.Api.Controllers
         public Goal[] Get()
         {
             var goalEntities = GetGoalsEntities().Result;
-            var goals = Mapper.Map<Goal[]>(goalEntities);
+            var goals = _mapper.Map<Goal[]>(goalEntities);
             return goals;
         }
 
@@ -49,7 +49,9 @@ namespace Monatsziele.Api.Controllers
 
         private async Task<List<GoalEntity>> GetGoalsEntities()
         {
-            var cloudTable = await GetTable("Goals");
+            var goalRepository = new GoalRepository(_configuration);
+
+            var cloudTable = await goalRepository.GetTable("Goals");
             var continuationToken = default(TableContinuationToken);
             var goals = new List<GoalEntity>();
 
@@ -69,7 +71,7 @@ namespace Monatsziele.Api.Controllers
         private async Task<CloudTable> GetTable(string tableName)
         {
             // get config
-            var connectionString = Configuration.GetConnectionString("monatsziele_AzureStorageConnectionString");
+            var connectionString = _configuration.AzureStorageConnectionString;
             var storageAccount = CloudStorageAccount.Parse(connectionString);
 
             // table storage client

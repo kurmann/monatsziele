@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Monatsziele.Repository;
 
 namespace Monatsziele.Api
 {
@@ -29,6 +30,12 @@ namespace Monatsziele.Api
                     .AllowAnyHeader()
                     .AllowCredentials();
             }));
+
+            services.AddTransient<IGoalRepository, GoalRepository>();
+
+            var config = new RepositoryConfig();
+            Configuration.GetSection("ConnectionStrings").Bind(config, a => a.BindNonPublicProperties = true);
+            services.AddSingleton(config);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

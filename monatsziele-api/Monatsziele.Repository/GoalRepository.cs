@@ -7,20 +7,25 @@ using Monatsziele.Repository.Models;
 
 namespace Monatsziele.Repository
 {
-    public class GoalsRepository
+    public class GoalRepository : IGoalRepository
     {
-        private readonly CloudTableClient _cloudTableClient;
-        private const string GoalsEntityName = "Goals";
+        private readonly RepositoryConfig _configuration;
 
-        public GoalsRepository(string tableStorageConnectionString)
+        public GoalRepository(RepositoryConfig configuration)
         {
-            var storageAccount = CloudStorageAccount.Parse(tableStorageConnectionString);
-            _cloudTableClient = storageAccount.CreateCloudTableClient();
+            _configuration = configuration;   
+        }
+        public async Task<TableResult> GetGoalEntity(Guid id)
+        {
+            var cloudTable = await GetTable("Goals");
+            var tableOperation = TableOperation.Retrieve<GoalEntity>("kurmannwillisau@me.com", id.ToString());
+
+            return cloudTable.ExecuteAsync(tableOperation)?.Result;
         }
 
         public async Task<List<GoalEntity>> GetGoalsEntities()
         {
-            var cloudTable = await GetTable(_cloudTableClient, GoalsEntityName);
+            var cloudTable = await GetTable("Goals");
             var continuationToken = default(TableContinuationToken);
             var goals = new List<GoalEntity>();
 
@@ -37,16 +42,14 @@ namespace Monatsziele.Repository
             return goals;
         }
 
-        public async Task<TableResult> GetGoalEntity(Guid id)
+        public async Task<CloudTable> GetTable(string tableName)
         {
-            var cloudTable = await GetTable(_cloudTableClient, GoalsEntityName);
-            var tableOperation = TableOperation.Retrieve<GoalEntity>("kurmannwillisau@me.com", id.ToString());
+            // get config
+            var storageAccount = CloudStorageAccount.Parse(_configuration.AzureStorageConnectionString);
 
-            return cloudTable.ExecuteAsync(tableOperation)?.Result;
-        }
+            // table storage client
+            var tableClient = storageAccount.CreateCloudTableClient();
 
-        private static async Task<CloudTable> GetTable(CloudTableClient tableClient, string tableName)
-        {
             // get table
             var tableReference = tableClient.GetTableReference(tableName);
 
