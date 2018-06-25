@@ -39,6 +39,16 @@ namespace Monatsziele.Api.Controllers
             return GetInsertTableResult<Goal>(entityResult);
         }
 
+        [HttpGet("{id:Guid}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public ActionResult Get(Guid id)
+        {
+            var tableResult = _repository.GetGoalEntity(id);
+            var entityResult = tableResult.Result;
+            return GetRetrieveTableResult<Goal>(entityResult);
+        }
+
         private ActionResult GetInsertTableResult<T>(TableResult entityResult)
         {
             switch (entityResult.HttpStatusCode)
