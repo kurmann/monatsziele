@@ -7,6 +7,7 @@ using Monatsziele.Repository;
 namespace Monatsziele.Api.Controllers
 {
     [Route("[controller]")]
+    [ApiController]
     public class GoalsController : Controller
     {
         private readonly IMapper _mapper;
@@ -25,8 +26,9 @@ namespace Monatsziele.Api.Controllers
             var goals = _mapper.Map<Goal[]>(goalEntities);
             return goals;
         }
+        
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:Guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         public ActionResult Get(Guid id)
@@ -44,5 +46,7 @@ namespace Monatsziele.Api.Controllers
             }
             return new StatusCodeResult(500);
         }
+
+
     }
 }

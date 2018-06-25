@@ -46,7 +46,16 @@ namespace Monatsziele.Api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Monatsziele API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info
+                {
+                    Title = "Monatsziele API",
+                    Version = "v1",
+                    Contact = new Contact
+                    {
+                        Name = "Patrick Kurmann"
+                    },
+                    Description = "API for the Monatsziele client"
+                });
             });
         }
 
