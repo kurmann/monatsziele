@@ -41,8 +41,6 @@ namespace Monatsziele.Api.Controllers
 
         private ActionResult GetInsertTableResult<T>(TableResult entityResult)
         {
-            T mappedResult;
-
             switch (entityResult.HttpStatusCode)
             {
                 case 404:
@@ -56,20 +54,34 @@ namespace Monatsziele.Api.Controllers
                     var uri = new Uri(Request.Path + "/" + id, UriKind.Relative);
 
                     // get mapped result
-                    mappedResult = _mapper.Map<T>(tableEntity);
+                    var mappedResult = _mapper.Map<T>(tableEntity);
 
                     // return
                     return Created(uri, mappedResult);
 
+                default:
+                    return new StatusCodeResult(entityResult.HttpStatusCode);
+            }
+        }
+
+        private ActionResult GetRetrieveTableResult<T>(TableResult entityResult)
+        {
+            switch (entityResult.HttpStatusCode)
+            {
+                case 404:
+                    return NotFound();
+
                 case 200:
-                    var tableResult = (TableResult)entityResult.Result;
-                    mappedResult = _mapper.Map<T>(tableResult);
+                    var tableEntity = (TableEntity)entityResult.Result;
+                    var mappedResult = _mapper.Map<T>(tableEntity);
                     return Ok(mappedResult);
 
                 default:
                     return new StatusCodeResult(entityResult.HttpStatusCode);
             }
         }
+
+
 
         [HttpGet("{id:Guid}")]
         [ProducesResponseType(200)]
@@ -78,16 +90,7 @@ namespace Monatsziele.Api.Controllers
         {
             var tableResult = _repository.GetGoalEntity(id);
             var entityResult = tableResult.Result;
-            switch (entityResult.HttpStatusCode)
-            {
-                case 404:
-                    return NotFound();
-                case 200:
-                    var goalEntity = entityResult.Result;
-                    var goal = _mapper.Map<Goal>(goalEntity);
-                    return Ok(goal);
-            }
-            return new StatusCodeResult(500);
+            return GetRetrieveTableResult<Goal>(entityResult);
         }
 
     }
