@@ -28,7 +28,8 @@ namespace Monatsziele.Repository
         {
             var table = await GetTable("Goals");
 
-            var goalEntity = new GoalEntity("kurmannwillisau@me.com", new Guid().ToString())
+            var id = Guid.NewGuid().ToString();
+            var goalEntity = new GoalEntity("kurmannwillisau@me.com", id)
                 {
                     Description = goalCreate.Description,
                     Name = goalCreate.Name,
