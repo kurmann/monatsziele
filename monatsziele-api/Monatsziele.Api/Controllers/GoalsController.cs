@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.WindowsAzure.Storage.Table;
 using Monatsziele.Api.Models;
 using Monatsziele.Repository;
 using Monatsziele.Repository.Dto;
@@ -33,19 +35,41 @@ namespace Monatsziele.Api.Controllers
         {
             var tableResult = _repository.CreateGoal(goalCreate);
             var entityResult = tableResult.Result;
+            return ProcessTableResult<Goal>(entityResult);
+        }
+
+        private ActionResult ProcessTableResult<T>(TableResult entityResult, Expression<Func<T,Guid>> guidProperty = null)
+        {
+            object tableResult;
+            T mappedResult;
+            Guid id;
+
             switch (entityResult.HttpStatusCode)
             {
                 case 404:
                     return NotFound();
                 case 204:
-                    var goalEntity = entityResult.Result;
-                    var goal = _mapper.Map<Goal>(goalEntity);
-                    var uri = new Uri(Request.Path + "/" + goal.Id, UriKind.Relative);
-                    return Created(uri, goal);
+                    tableResult = entityResult.Result;
+                    mappedResult = _mapper.Map<T>(tableResult);
+
+                    // null check
+                    id = guidProperty?.Compile()(mappedResult) ?? GetGuidDefaultValue(mappedResult);
+
+                    // get result
+                    var uri = new Uri(Request.Path + "/" + id, UriKind.Relative);
+                    return Created(uri, mappedResult);
+                case 200:
+                    tableResult = entityResult.Result;
+                    mappedResult = _mapper.Map<T>(tableResult);
+                    return Ok(mappedResult);
             }
             return new StatusCodeResult(500);
+
+            Guid GetGuidDefaultValue(dynamic targetType)
+            {
+                return targetType.Id;
+            }
         }
-        
 
         [HttpGet("{id:Guid}")]
         [ProducesResponseType(200)]
