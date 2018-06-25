@@ -36,10 +36,10 @@ namespace Monatsziele.Api.Controllers
         {
             var tableResult = _repository.CreateGoal(goalCreate);
             var entityResult = tableResult.Result;
-            return ProcessTableResult<Goal>(entityResult);
+            return GetInsertTableResult<Goal>(entityResult);
         }
 
-        private ActionResult ProcessTableResult<T>(TableResult entityResult)
+        private ActionResult GetInsertTableResult<T>(TableResult entityResult)
         {
             T mappedResult;
 
@@ -89,7 +89,6 @@ namespace Monatsziele.Api.Controllers
             }
             return new StatusCodeResult(500);
         }
-
 
     }
 }
