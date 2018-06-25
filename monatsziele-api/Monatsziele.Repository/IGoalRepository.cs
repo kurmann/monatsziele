@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage.Table;
-using Monatsziele.Repository.Models;
+using Monatsziele.Repository.Dto;
+using Monatsziele.Repository.EntityModels;
 
 namespace Monatsziele.Repository
 {
@@ -13,5 +14,7 @@ namespace Monatsziele.Repository
         Task<List<GoalEntity>> GetGoalsEntities();
 
         Task<TableResult> GetGoalEntity(Guid id);
+
+        Task<TableResult> CreateGoal(GoalCreate goalCreate);
     }
 }

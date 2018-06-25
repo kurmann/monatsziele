@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
-using Monatsziele.Repository.Models;
+using Monatsziele.Repository.Dto;
+using Monatsziele.Repository.EntityModels;
 
 namespace Monatsziele.Repository
 {
@@ -21,6 +22,23 @@ namespace Monatsziele.Repository
             var tableOperation = TableOperation.Retrieve<GoalEntity>("kurmannwillisau@me.com", id.ToString());
 
             return cloudTable.ExecuteAsync(tableOperation)?.Result;
+        }
+
+        public async Task<TableResult> CreateGoal(GoalCreate goalCreate)
+        {
+            var table = await GetTable("Goals");
+
+            var goalEntity = new GoalEntity("kurmannwillisau@me.com", new Guid().ToString())
+                {
+                    Description = goalCreate.Description,
+                    Name = goalCreate.Name,
+                    InitialAmount = goalCreate.InitialAmount,
+                    TargetAmount = goalCreate.TargetAmount,
+                    AmountUnitOfMeasurement = goalCreate.AmountUnitOfMeasurement
+            };
+
+            var insertOperation = TableOperation.Insert(goalEntity);
+            return table.ExecuteAsync(insertOperation)?.Result;
         }
 
         public async Task<List<GoalEntity>> GetGoalsEntities()

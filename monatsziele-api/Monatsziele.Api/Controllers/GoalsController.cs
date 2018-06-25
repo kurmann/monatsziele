@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Monatsziele.Api.Models;
 using Monatsziele.Repository;
+using Monatsziele.Repository.Dto;
 
 namespace Monatsziele.Api.Controllers
 {
@@ -25,6 +26,13 @@ namespace Monatsziele.Api.Controllers
             var goalEntities = _repository.GetGoalsEntities().Result;
             var goals = _mapper.Map<Goal[]>(goalEntities);
             return goals;
+        }
+
+        [HttpPost]
+        public ActionResult Create([FromBody] GoalCreate goalCreate)
+        {
+            _repository.CreateGoal(goalCreate);
+            return Ok("it works");
         }
         
 

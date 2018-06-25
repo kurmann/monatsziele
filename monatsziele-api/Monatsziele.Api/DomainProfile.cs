@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Monatsziele.Api.Models;
-using Monatsziele.Repository.Models;
+using Monatsziele.Repository.EntityModels;
 
 namespace Monatsziele.Api
 {
