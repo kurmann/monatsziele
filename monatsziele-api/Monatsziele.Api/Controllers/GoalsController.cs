@@ -47,7 +47,7 @@ namespace Monatsziele.Api.Controllers
                     return NotFound();
 
                 case 204:
-                    var tableEntity = (TableEntity) entityResult.Result;
+                    var tableEntity = (TableEntity)entityResult.Result;
 
                     // create uri
                     var id = tableEntity.RowKey;
@@ -80,18 +80,5 @@ namespace Monatsziele.Api.Controllers
                     return new StatusCodeResult(entityResult.HttpStatusCode);
             }
         }
-
-
-
-        [HttpGet("{id:Guid}")]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
-        public ActionResult Get(Guid id)
-        {
-            var tableResult = _repository.GetGoalEntity(id);
-            var entityResult = tableResult.Result;
-            return GetRetrieveTableResult<Goal>(entityResult);
-        }
-
     }
 }
