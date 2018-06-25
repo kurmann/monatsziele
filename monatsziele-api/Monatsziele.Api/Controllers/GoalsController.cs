@@ -31,8 +31,19 @@ namespace Monatsziele.Api.Controllers
         [HttpPost]
         public ActionResult Create([FromBody] GoalCreate goalCreate)
         {
-            _repository.CreateGoal(goalCreate);
-            return Ok("it works");
+            var tableResult = _repository.CreateGoal(goalCreate);
+            var entityResult = tableResult.Result;
+            switch (entityResult.HttpStatusCode)
+            {
+                case 404:
+                    return NotFound();
+                case 204:
+                    var goalEntity = entityResult.Result;
+                    var goal = _mapper.Map<Goal>(goalEntity);
+                    var uri = new Uri(Request.Path + "/" + goal.Id, UriKind.Relative);
+                    return Created(uri, goal);
+            }
+            return new StatusCodeResult(500);
         }
         
 
