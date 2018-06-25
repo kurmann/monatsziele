@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Monatsziele.Repository;
 
 namespace Monatsziele.Api.Models
 {
     public class Goal
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double InitialAmount { get; set; }

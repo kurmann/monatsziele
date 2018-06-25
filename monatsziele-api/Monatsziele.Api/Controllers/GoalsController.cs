@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -31,6 +30,8 @@ namespace Monatsziele.Api.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(404)]
         public ActionResult Create([FromBody] GoalCreate goalCreate)
         {
             var tableResult = _repository.CreateGoal(goalCreate);
@@ -38,36 +39,35 @@ namespace Monatsziele.Api.Controllers
             return ProcessTableResult<Goal>(entityResult);
         }
 
-        private ActionResult ProcessTableResult<T>(TableResult entityResult, Expression<Func<T,Guid>> guidProperty = null)
+        private ActionResult ProcessTableResult<T>(TableResult entityResult)
         {
-            object tableResult;
             T mappedResult;
-            Guid id;
 
             switch (entityResult.HttpStatusCode)
             {
                 case 404:
                     return NotFound();
+
                 case 204:
-                    tableResult = entityResult.Result;
-                    mappedResult = _mapper.Map<T>(tableResult);
+                    var tableEntity = (TableEntity) entityResult.Result;
 
-                    // null check
-                    id = guidProperty?.Compile()(mappedResult) ?? GetGuidDefaultValue(mappedResult);
-
-                    // get result
+                    // create uri
+                    var id = tableEntity.RowKey;
                     var uri = new Uri(Request.Path + "/" + id, UriKind.Relative);
+
+                    // get mapped result
+                    mappedResult = _mapper.Map<T>(tableEntity);
+
+                    // return
                     return Created(uri, mappedResult);
+
                 case 200:
-                    tableResult = entityResult.Result;
+                    var tableResult = (TableResult)entityResult.Result;
                     mappedResult = _mapper.Map<T>(tableResult);
                     return Ok(mappedResult);
-            }
-            return new StatusCodeResult(500);
 
-            Guid GetGuidDefaultValue(dynamic targetType)
-            {
-                return targetType.Id;
+                default:
+                    return new StatusCodeResult(entityResult.HttpStatusCode);
             }
         }
 
