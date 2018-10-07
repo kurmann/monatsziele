@@ -1,4 +1,0 @@
-{
-      // If true, will use single instead of double quotes
-  "prettier.singleQuote": true,
-}
