@@ -10,38 +10,50 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
-namespace Projects
-{
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
+namespace Projects {
+    public class Startup {
+        public Startup (IConfiguration configuration) {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        public void ConfigureServices (IServiceCollection services) {
+            services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
+            services.AddCors (options => {
+                options.AddPolicy ("AnyOrigin", builder => {
+                    builder
+                        .AllowAnyOrigin ()
+                        .AllowAnyMethod ();
+                });
+            });
+            services.AddSwaggerGen (c => {
+                c.SwaggerDoc ("v1", new Info { Title = "AmbitionManagement API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
+        public void Configure (IApplicationBuilder app, IHostingEnvironment env) {
+
+            app.UseCors ("AnyOrigin");
+
+            app.UseSwagger ();
+            app.UseSwaggerUI (c => {
+                c.SwaggerEndpoint ("/swagger/v1/swagger.json", "AmbitionManagement API");
+                c.RoutePrefix = string.Empty;
+            });
+
+            if (env.IsDevelopment ()) {
+                app.UseDeveloperExceptionPage ();
+            } else {
+                app.UseHsts ();
             }
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseHttpsRedirection ();
+            app.UseMvc ();
         }
     }
 }
