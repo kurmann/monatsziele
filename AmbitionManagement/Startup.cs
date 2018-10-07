@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AmbitionManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -27,7 +28,8 @@ namespace AmbitionManagement
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                var ambition = new Ambition { Id = 1, Name = "Kettlebell-Challenge" };
+                await context.Response.WriteAsync($"Ziel: {ambition.Name}");
             });
         }
     }
