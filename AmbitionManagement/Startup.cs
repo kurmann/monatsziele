@@ -28,8 +28,8 @@ namespace AmbitionManagement
 
             app.Run(async (context) =>
             {
-                var ambition = new Ambition { Id = 1, Name = "Kettlebell-Challenge" };
-                await context.Response.WriteAsync($"Ziel: {ambition.Name}");
+                var ambitionName = "Kettlebell-Challenge";
+                await context.Response.WriteAsync($"Ziel: {ambitionName}");
             });
         }
     }
