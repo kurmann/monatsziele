@@ -1,5 +1,5 @@
 # Monatsziele
-First personal Angular evaluation project with a .NET core based RESTful API
+First personal project since years using DotNet Core and microservices
 
 ## Subject
 Setting monthly goals and track them
