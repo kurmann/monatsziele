@@ -1,8 +1,8 @@
 using System;
-using AmbitionManagement.Models;
+using AmbitionJournal.Models;
 using Newtonsoft.Json;
 
-namespace AmbitionManagement.Events {
+namespace AmbitionJournal.Events {
     public class AmbitionCreatedEvent : Event {
         public AmbitionCreatedEvent(string name)
         {

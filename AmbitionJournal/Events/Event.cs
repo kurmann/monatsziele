@@ -1,6 +1,6 @@
 using System;
 
-namespace AmbitionManagement.Events
+namespace AmbitionJournal.Events
 {
     public class Event
     {

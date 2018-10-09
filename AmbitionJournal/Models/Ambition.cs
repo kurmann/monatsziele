@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AmbitionManagement.Models
+namespace AmbitionJournal.Models
 {
     public class Ambition
     {

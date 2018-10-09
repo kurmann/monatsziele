@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using AmbitionManagement.Events;
-using AmbitionManagement.EventStore;
-using AmbitionManagement.Models;
+using AmbitionJournal.Events;
+using AmbitionJournal.EventStore;
+using AmbitionJournal.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AmbitionManagement.Controllers {
+namespace AmbitionJournal.Controllers {
 
     [Route ("api/[controller]")]
     public class AmbitionsController : ControllerBase

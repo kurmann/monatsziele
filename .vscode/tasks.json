@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/AmbitionManagement/AmbitionManagement.csproj"
+                "${workspaceFolder}/AmbitionJournal/AmbitionJournal.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/AmbitionManagementTests/AmbitionManagementsTests.csproj"
+                "${workspaceFolder}/AmbitionJournal.Tests/AmbitionJournal.Tests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

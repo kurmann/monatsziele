@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using AmbitionManagement.Events;
+using AmbitionJournal.Events;
 
-namespace AmbitionManagement.EventStore
+namespace AmbitionJournal.EventStore
 {
     public class InMemoryEventStore : IEventStore
     {

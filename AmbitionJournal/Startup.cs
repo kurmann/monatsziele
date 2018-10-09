@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Projects {
+namespace AmbitionJournal {
     public class Startup {
         public Startup (IConfiguration configuration) {
             Configuration = configuration;
