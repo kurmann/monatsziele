@@ -9,7 +9,7 @@ namespace AmbitionJournalTests
     public class AmbitionControllerTests
     {
         [Fact]
-        public void Test1()
+        public void AmbitionRepositoryGet_Test()
         {
             // arrange
             var ambitionRepository = new AmbitionRepository();
