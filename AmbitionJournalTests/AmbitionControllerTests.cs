@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using AmbitionJournal.Controllers;
+using AmbitionJournal.Repositories;
 using FluentAssertions;
 using Xunit;
 
@@ -12,10 +12,10 @@ namespace AmbitionJournalTests
         public void Test1()
         {
             // arrange
-            var ambitionsController = new AmbitionsController();
+            var ambitionRepository = new AmbitionRepository();
 
             // act
-            var ambitions = ambitionsController.Get().Value;
+            var ambitions = ambitionRepository.GetAmbitions();
 
             // assert
             ambitions.Count().Should().Be(3);
