@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/AmbitionJournal.Tests/AmbitionJournal.Tests.csproj"
+                "${workspaceFolder}/AmbitionJournalTests/AmbitionJournalTests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
