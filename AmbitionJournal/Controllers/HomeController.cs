@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AmbitionJournal.Models;
+using AmbitionJournal.Repositories;
 
 namespace AmbitionJournal.Controllers
 {
@@ -12,7 +13,9 @@ namespace AmbitionJournal.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var ambitionRepository = new AmbitionRepository();
+            var ambitions = ambitionRepository.GetAmbitions();
+            return View(ambitions);
         }
     }
 }

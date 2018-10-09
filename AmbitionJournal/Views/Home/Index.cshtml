@@ -1,5 +1,12 @@
 ﻿@{
     ViewData["Title"] = "List of all ambitions";
 }
+@model List<AmbitionJournal.Models.Ambition>
 <h1>Liste aller Zielsetzungen</h1>
+<ul>
+    @foreach (var ambition in Model)
+    {
+        <li>@ambition.Name</li>
+    }
+</ul>
 </div>
