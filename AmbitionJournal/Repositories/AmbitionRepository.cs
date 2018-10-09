@@ -6,8 +6,7 @@ namespace AmbitionJournal.Repositories
 {
     public class AmbitionRepository
     {
-        public IList<Ambition> GetAmbitions() {
-            return new List<Ambition> {
+        private IList<Ambition> _ambitions {get; set;} = new List<Ambition> {
                  new Ambition {
                      Id = new Guid("05309611-f23e-42d4-a946-06b95666aa2d"),
                      Name = "Kugelhantel-Herausforderung"
@@ -21,6 +20,19 @@ namespace AmbitionJournal.Repositories
                      Name = "Fahrstunden-Theorie"
                  }
              };
+
+        public IList<Ambition> GetAmbitions() {
+            return _ambitions;
+        }
+
+        internal Ambition CreateAmbition(string name)
+        {
+            var newAmbition = new Ambition {
+                Id = Guid.NewGuid(),
+                Name = name
+            };
+            _ambitions.Add(newAmbition);
+            return newAmbition;
         }
     }
 }
