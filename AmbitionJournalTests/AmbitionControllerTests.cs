@@ -1,6 +1,5 @@
-using System;
 using System.Linq;
-using AmbitionJournal.Repositories;
+using AmbitionJournalRazor.Repositories;
 using FluentAssertions;
 using Xunit;
 

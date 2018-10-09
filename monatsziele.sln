@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmbitionJournal", "AmbitionJournal\AmbitionJournal.csproj", "{051A7A62-715F-4077-9880-85FF211660F5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmbitionJournalTests", "AmbitionJournalTests\AmbitionJournalTests.csproj", "{F018395E-3701-4AF4-AD95-64DDB5783282}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmbitionJournalRazor", "AmbitionJournalRazor\AmbitionJournalRazor.csproj", "{BC18258E-31BF-4FDE-A279-617397E96110}"
@@ -22,18 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{051A7A62-715F-4077-9880-85FF211660F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Debug|x64.Build.0 = Debug|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Debug|x86.Build.0 = Debug|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Release|x64.ActiveCfg = Release|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Release|x64.Build.0 = Release|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Release|x86.ActiveCfg = Release|Any CPU
-		{051A7A62-715F-4077-9880-85FF211660F5}.Release|x86.Build.0 = Release|Any CPU
 		{F018395E-3701-4AF4-AD95-64DDB5783282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F018395E-3701-4AF4-AD95-64DDB5783282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F018395E-3701-4AF4-AD95-64DDB5783282}.Debug|x64.ActiveCfg = Debug|Any CPU
