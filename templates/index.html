@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziele Übersicht</title>
+    <style>
+        body {
+            font-family: Product, monospace, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .goals-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .goal {
+            margin-bottom: 20px;
+        }
+        .goal-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .goal-description {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Willkommen bei Kurmann Monatsziele</h1>
+    <div class="goals-container">
+        {% for goal in goals %}
+            <div class="goal">
+                <div class="goal-title">{{ goal.title }}</div>
+                <div class="goal-description">{{ goal.description }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
