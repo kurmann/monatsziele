@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "zielerfassung"
+name = "Kurmann Monatsziele"
 version = "0.1.0"
 description = "CLI tool for goal management and tracking"
-authors = ["Your Name <youremail@example.com>"]
+authors = ["Patrick Kurmann <kurmannwillisau@gmail.com>"]
 dependencies = [
     "click = "^8.0"",
     "sqlalchemy = "^1.4""
