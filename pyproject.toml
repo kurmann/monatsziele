@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kurmann-monatsziele"
-version = "0.1.0"
+version = "0.2.0"
 description = "CLI tool for goal management and tracking"
 authors = ["Patrick Kurmann <kurmannwillisau@gmail.com>"]
 
