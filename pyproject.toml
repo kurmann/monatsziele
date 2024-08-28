@@ -4,6 +4,11 @@ version = "0.1.0"
 description = "CLI tool for goal management and tracking"
 authors = ["Patrick Kurmann <kurmannwillisau@gmail.com>"]
 
+packages = [
+    { include = "kurmann_monatsziele", from = "src" },
+    { include = "goals", from = "src" }
+]
+
 [tool.poetry.dependencies]
 python = "^3.11"
 click = "^8.0"
@@ -12,3 +17,6 @@ sqlalchemy = "^1.4"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kurmann-monatsziele = "kurmann_monatsziele.cli:cli"
