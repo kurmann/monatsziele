@@ -21,3 +21,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 kurmann-monatsziele = "kurmann_monatsziele.cli:cli"
+kurmann-webapp = "app:app"
