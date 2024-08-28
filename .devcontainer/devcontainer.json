@@ -19,7 +19,8 @@
 			"extensions": [
 				"github.copilot",
 				"be5invis.toml",
-				"ms-python.python"
+				"ms-python.python",
+				"qwtel.sqlite-viewer"
 				]
 			}
 	},
